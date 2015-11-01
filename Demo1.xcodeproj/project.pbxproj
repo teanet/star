@@ -7,6 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		930F70D61BE652FD00F18626 /* DEMStoreVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 930F70D51BE652FD00F18626 /* DEMStoreVC.m */; };
+		930F70D91BE6535900F18626 /* DEMStoreVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 930F70D81BE6535900F18626 /* DEMStoreVM.m */; };
+		930F70DE1BE6557A00F18626 /* DEMGravizappa.m in Sources */ = {isa = PBXBuildFile; fileRef = 930F70DD1BE6557A00F18626 /* DEMGravizappa.m */; };
+		930F70DF1BE6557A00F18626 /* DEMGravizappa.m in Sources */ = {isa = PBXBuildFile; fileRef = 930F70DD1BE6557A00F18626 /* DEMGravizappa.m */; };
+		930F70E21BE6572B00F18626 /* DEMGameVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 930F70E11BE6572B00F18626 /* DEMGameVM.m */; };
+		930F70E31BE6572B00F18626 /* DEMGameVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 930F70E11BE6572B00F18626 /* DEMGameVM.m */; };
+		930F70E71BE6589200F18626 /* DEMStoreItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 930F70E61BE6589200F18626 /* DEMStoreItemCell.m */; };
+		930F70E81BE6589200F18626 /* DEMStoreItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 930F70E61BE6589200F18626 /* DEMStoreItemCell.m */; };
+		930F70EB1BE65D8A00F18626 /* DEMWarehouseVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 930F70EA1BE65D8A00F18626 /* DEMWarehouseVM.m */; };
+		930F70EC1BE65D8A00F18626 /* DEMWarehouseVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 930F70EA1BE65D8A00F18626 /* DEMWarehouseVM.m */; };
+		930F70EF1BE65E2100F18626 /* DEMEnergyCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 930F70EE1BE65E2100F18626 /* DEMEnergyCellModel.m */; };
+		930F70F01BE65E2100F18626 /* DEMEnergyCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 930F70EE1BE65E2100F18626 /* DEMEnergyCellModel.m */; };
 		93BFF3E91BE646E200EB4B29 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 93BFF3E81BE646E200EB4B29 /* main.m */; };
 		93BFF3EC1BE646E200EB4B29 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 93BFF3EB1BE646E200EB4B29 /* AppDelegate.m */; };
 		93BFF3EF1BE646E200EB4B29 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93BFF3EE1BE646E200EB4B29 /* ViewController.m */; };
@@ -34,6 +46,22 @@
 /* Begin PBXFileReference section */
 		72F039815E1FD4EA46FFC19A /* Pods_Demo1.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Demo1.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		77D90EAE768F62B9B31204C2 /* Pods-Demo1.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demo1.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Demo1/Pods-Demo1.debug.xcconfig"; sourceTree = "<group>"; };
+		930F70D41BE652FD00F18626 /* DEMStoreVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEMStoreVC.h; sourceTree = "<group>"; };
+		930F70D51BE652FD00F18626 /* DEMStoreVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEMStoreVC.m; sourceTree = "<group>"; };
+		930F70D71BE6535900F18626 /* DEMStoreVM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEMStoreVM.h; sourceTree = "<group>"; };
+		930F70D81BE6535900F18626 /* DEMStoreVM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEMStoreVM.m; sourceTree = "<group>"; };
+		930F70DB1BE653BB00F18626 /* DEMStoreItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEMStoreItem.h; sourceTree = "<group>"; };
+		930F70DC1BE6557A00F18626 /* DEMGravizappa.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEMGravizappa.h; sourceTree = "<group>"; };
+		930F70DD1BE6557A00F18626 /* DEMGravizappa.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEMGravizappa.m; sourceTree = "<group>"; };
+		930F70E01BE6572B00F18626 /* DEMGameVM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEMGameVM.h; sourceTree = "<group>"; };
+		930F70E11BE6572B00F18626 /* DEMGameVM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEMGameVM.m; sourceTree = "<group>"; };
+		930F70E51BE6589200F18626 /* DEMStoreItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEMStoreItemCell.h; sourceTree = "<group>"; };
+		930F70E61BE6589200F18626 /* DEMStoreItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEMStoreItemCell.m; sourceTree = "<group>"; };
+		930F70E91BE65D8A00F18626 /* DEMWarehouseVM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEMWarehouseVM.h; sourceTree = "<group>"; };
+		930F70EA1BE65D8A00F18626 /* DEMWarehouseVM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEMWarehouseVM.m; sourceTree = "<group>"; };
+		930F70ED1BE65E2100F18626 /* DEMEnergyCellModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEMEnergyCellModel.h; sourceTree = "<group>"; };
+		930F70EE1BE65E2100F18626 /* DEMEnergyCellModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEMEnergyCellModel.m; sourceTree = "<group>"; };
+		930F70F21BE6667000F18626 /* DEMWarehouseItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEMWarehouseItem.h; sourceTree = "<group>"; };
 		93BFF3E41BE646E200EB4B29 /* Demo1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Demo1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93BFF3E81BE646E200EB4B29 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		93BFF3EA1BE646E200EB4B29 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -86,6 +114,61 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		930F70D31BE652DA00F18626 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				930F70E41BE6585A00F18626 /* Cell */,
+				93BFF40D1BE64B5B00EB4B29 /* DEMBaseVC.h */,
+				93BFF40E1BE64B5B00EB4B29 /* DEMBaseVC.m */,
+				930F70D41BE652FD00F18626 /* DEMStoreVC.h */,
+				930F70D51BE652FD00F18626 /* DEMStoreVC.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		930F70DA1BE6535C00F18626 /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				930F70DB1BE653BB00F18626 /* DEMStoreItem.h */,
+				930F70D71BE6535900F18626 /* DEMStoreVM.h */,
+				930F70D81BE6535900F18626 /* DEMStoreVM.m */,
+				930F70DC1BE6557A00F18626 /* DEMGravizappa.h */,
+				930F70DD1BE6557A00F18626 /* DEMGravizappa.m */,
+			);
+			name = Store;
+			sourceTree = "<group>";
+		};
+		930F70E41BE6585A00F18626 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				930F70E51BE6589200F18626 /* DEMStoreItemCell.h */,
+				930F70E61BE6589200F18626 /* DEMStoreItemCell.m */,
+			);
+			name = Cell;
+			sourceTree = "<group>";
+		};
+		930F70F11BE65E2B00F18626 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				930F70F31BE670AB00F18626 /* Warehouse */,
+				93BFF4111BE64D6100EB4B29 /* DEMMotherShipVM.h */,
+				93BFF4121BE64D6100EB4B29 /* DEMMotherShipVM.m */,
+				930F70ED1BE65E2100F18626 /* DEMEnergyCellModel.h */,
+				930F70EE1BE65E2100F18626 /* DEMEnergyCellModel.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		930F70F31BE670AB00F18626 /* Warehouse */ = {
+			isa = PBXGroup;
+			children = (
+				930F70F21BE6667000F18626 /* DEMWarehouseItem.h */,
+				930F70E91BE65D8A00F18626 /* DEMWarehouseVM.h */,
+				930F70EA1BE65D8A00F18626 /* DEMWarehouseVM.m */,
+			);
+			name = Warehouse;
+			sourceTree = "<group>";
+		};
 		93BFF3DB1BE646E200EB4B29 = {
 			isa = PBXGroup;
 			children = (
@@ -119,8 +202,7 @@
 				93BFF3F51BE646E200EB4B29 /* LaunchScreen.storyboard */,
 				93BFF3F81BE646E200EB4B29 /* Info.plist */,
 				93BFF3E71BE646E200EB4B29 /* Supporting Files */,
-				93BFF40D1BE64B5B00EB4B29 /* DEMBaseVC.h */,
-				93BFF40E1BE64B5B00EB4B29 /* DEMBaseVC.m */,
+				930F70D31BE652DA00F18626 /* Views */,
 			);
 			path = Demo1;
 			sourceTree = "<group>";
@@ -145,8 +227,10 @@
 		93BFF4101BE64D2D00EB4B29 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				93BFF4111BE64D6100EB4B29 /* DEMMotherShipVM.h */,
-				93BFF4121BE64D6100EB4B29 /* DEMMotherShipVM.m */,
+				930F70DA1BE6535C00F18626 /* Store */,
+				930F70E01BE6572B00F18626 /* DEMGameVM.h */,
+				930F70E11BE6572B00F18626 /* DEMGameVM.m */,
+				930F70F11BE65E2B00F18626 /* Models */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -376,11 +460,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				930F70E21BE6572B00F18626 /* DEMGameVM.m in Sources */,
 				93BFF40F1BE64B5B00EB4B29 /* DEMBaseVC.m in Sources */,
 				93BFF3EF1BE646E200EB4B29 /* ViewController.m in Sources */,
 				93BFF3EC1BE646E200EB4B29 /* AppDelegate.m in Sources */,
+				930F70EB1BE65D8A00F18626 /* DEMWarehouseVM.m in Sources */,
 				93BFF3E91BE646E200EB4B29 /* main.m in Sources */,
+				930F70E71BE6589200F18626 /* DEMStoreItemCell.m in Sources */,
 				93BFF4131BE64D6100EB4B29 /* DEMMotherShipVM.m in Sources */,
+				930F70EF1BE65E2100F18626 /* DEMEnergyCellModel.m in Sources */,
+				930F70DE1BE6557A00F18626 /* DEMGravizappa.m in Sources */,
+				930F70D91BE6535900F18626 /* DEMStoreVM.m in Sources */,
+				930F70D61BE652FD00F18626 /* DEMStoreVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -388,7 +479,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				930F70E81BE6589200F18626 /* DEMStoreItemCell.m in Sources */,
 				93BFF4141BE64D6100EB4B29 /* DEMMotherShipVM.m in Sources */,
+				930F70F01BE65E2100F18626 /* DEMEnergyCellModel.m in Sources */,
+				930F70E31BE6572B00F18626 /* DEMGameVM.m in Sources */,
+				930F70EC1BE65D8A00F18626 /* DEMWarehouseVM.m in Sources */,
+				930F70DF1BE6557A00F18626 /* DEMGravizappa.m in Sources */,
 				93BFF4021BE646E200EB4B29 /* Demo1Tests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

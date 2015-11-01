@@ -8,11 +8,12 @@
 
 #import "ViewController.h"
 #import "DEMBaseVC.h"
-#import "DEMMotherShipVM.h"
+#import "DEMGameVM.h"
+#import "DEMStoreVC.h"
 
 @interface ViewController ()
 
-@property (nonatomic, strong) DEMMotherShipVM *motherShipVM;
+@property (nonatomic, strong) DEMGameVM *gameVM;
 
 @end
 
@@ -22,7 +23,7 @@
 {
 	self = [super initWithCoder:aDecoder];
 	if (self == nil) return nil;
-	_motherShipVM = [DEMMotherShipVM new];
+	_gameVM = [DEMGameVM new];
 	return self;
 }
 
@@ -34,15 +35,14 @@
 - (IBAction)showBase:(id)sender {
 
 	DEMBaseVC *baseVC = [self.storyboard instantiateViewControllerWithIdentifier:@"baseVC"];
-	baseVC.motherShipVM = self.motherShipVM;
+	baseVC.motherShipVM = self.gameVM.motherShipVM;
 	[self.navigationController pushViewController:baseVC animated:YES];
 	
 }
 
-
-- (void)didReceiveMemoryWarning {
-	[super didReceiveMemoryWarning];
-	// Dispose of any resources that can be recreated.
+- (IBAction)showStore:(id)sender {
+	DEMStoreVC *storeVC = [[DEMStoreVC alloc] initWithStoreVM:self.gameVM.storeVM];
+	[self.navigationController pushViewController:storeVC animated:YES];
 }
 
 @end
