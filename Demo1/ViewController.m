@@ -7,17 +7,38 @@
 //
 
 #import "ViewController.h"
+#import "DEMBaseVC.h"
+#import "DEMMotherShipVM.h"
 
 @interface ViewController ()
+
+@property (nonatomic, strong) DEMMotherShipVM *motherShipVM;
 
 @end
 
 @implementation ViewController
 
+- (instancetype)initWithCoder:(NSCoder *)aDecoder
+{
+	self = [super initWithCoder:aDecoder];
+	if (self == nil) return nil;
+	_motherShipVM = [DEMMotherShipVM new];
+	return self;
+}
+
 - (void)viewDidLoad {
 	[super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+
 }
+
+- (IBAction)showBase:(id)sender {
+
+	DEMBaseVC *baseVC = [self.storyboard instantiateViewControllerWithIdentifier:@"baseVC"];
+	baseVC.motherShipVM = self.motherShipVM;
+	[self.navigationController pushViewController:baseVC animated:YES];
+	
+}
+
 
 - (void)didReceiveMemoryWarning {
 	[super didReceiveMemoryWarning];

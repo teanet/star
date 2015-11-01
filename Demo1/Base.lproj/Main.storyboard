@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -22,7 +23,7 @@
                                 <animations/>
                                 <state key="normal" title="Base"/>
                                 <connections>
-                                    <segue destination="8Vg-36-9nW" kind="show" id="9ef-nK-eDY"/>
+                                    <action selector="showBase:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Pee-vr-tWp"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ed2-dq-COJ">
@@ -74,17 +75,52 @@
         <!--Base-->
         <scene sceneID="UT0-Tw-SXw">
             <objects>
-                <viewController title="Base" id="8Vg-36-9nW" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="baseVC" title="Base" id="8Vg-36-9nW" customClass="DEMBaseVC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="7Ty-n4-jVq"/>
                         <viewControllerLayoutGuide type="bottom" id="WBN-2q-hIK"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="4Mm-jZ-XDc">
+                    <view key="view" contentMode="scaleToFill" restorationIdentifier="baseVC" id="4Mm-jZ-XDc">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ke9-Ub-n4Y">
+                                <rect key="frame" x="140" y="213" width="240" height="128"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8fn-GX-1LE">
+                                        <rect key="frame" x="14" y="17" width="213" height="93"/>
+                                        <animations/>
+                                        <state key="normal" title="Energy core"/>
+                                        <connections>
+                                            <action selector="addEnergy:" destination="8Vg-36-9nW" eventType="touchUpInside" id="anA-UF-X3K"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <animations/>
+                                <color key="backgroundColor" red="1" green="0.32313932140000001" blue="0.33252530070000003" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XmH-FL-hRl">
+                                <rect key="frame" x="20" y="72" width="560" height="21"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="Nw4-lM-vzb"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="XmH-FL-hRl" firstAttribute="top" secondItem="7Ty-n4-jVq" secondAttribute="bottom" constant="8" id="c1m-Sr-geC"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="XmH-FL-hRl" secondAttribute="trailing" id="t09-28-3wS"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="XmH-FL-hRl" secondAttribute="leading" id="xKR-Iw-h8k"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="energyLabel" destination="XmH-FL-hRl" id="l4P-nk-60t"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hf2-09-sS8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
