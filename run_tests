@@ -12,6 +12,6 @@ XCODEBUILD_FLAGS=(-destination "${DESTINATION}" -workspace "${WORKSPACE}" -schem
 echo "*** Running tests on $DESTINATION"
 xcodebuild test \
     "${XCODEBUILD_FLAGS[@]}" \
-    2>&1 | xcpretty -c
+    2>&1 | xcpretty -ct
 
 cd "${CURRENT_DIR}"

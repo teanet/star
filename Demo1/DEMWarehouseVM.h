@@ -6,7 +6,7 @@
 //  Copyright © 2015 demo. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+
 #import "DEMWarehouseItem.h"
 
 @interface DEMWarehouseVM : NSObject

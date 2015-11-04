@@ -19,13 +19,13 @@
 		930F70EC1BE65D8A00F18626 /* DEMWarehouseVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 930F70EA1BE65D8A00F18626 /* DEMWarehouseVM.m */; };
 		930F70EF1BE65E2100F18626 /* DEMEnergyCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 930F70EE1BE65E2100F18626 /* DEMEnergyCellModel.m */; };
 		930F70F01BE65E2100F18626 /* DEMEnergyCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 930F70EE1BE65E2100F18626 /* DEMEnergyCellModel.m */; };
+		932BE4851BEA6B4200201FA3 /* DEMWaveSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 932BE4841BEA6B4200201FA3 /* DEMWaveSpec.m */; };
 		93BFF3E91BE646E200EB4B29 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 93BFF3E81BE646E200EB4B29 /* main.m */; };
 		93BFF3EC1BE646E200EB4B29 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 93BFF3EB1BE646E200EB4B29 /* AppDelegate.m */; };
 		93BFF3EF1BE646E200EB4B29 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93BFF3EE1BE646E200EB4B29 /* ViewController.m */; };
 		93BFF3F21BE646E200EB4B29 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93BFF3F01BE646E200EB4B29 /* Main.storyboard */; };
 		93BFF3F41BE646E200EB4B29 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93BFF3F31BE646E200EB4B29 /* Assets.xcassets */; };
 		93BFF3F71BE646E200EB4B29 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93BFF3F51BE646E200EB4B29 /* LaunchScreen.storyboard */; };
-		93BFF4021BE646E200EB4B29 /* Demo1Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 93BFF4011BE646E200EB4B29 /* Demo1Tests.m */; };
 		93BFF40F1BE64B5B00EB4B29 /* DEMBaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 93BFF40E1BE64B5B00EB4B29 /* DEMBaseVC.m */; };
 		93BFF4131BE64D6100EB4B29 /* DEMMotherShipVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 93BFF4121BE64D6100EB4B29 /* DEMMotherShipVM.m */; };
 		93BFF4141BE64D6100EB4B29 /* DEMMotherShipVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 93BFF4121BE64D6100EB4B29 /* DEMMotherShipVM.m */; };
@@ -37,6 +37,10 @@
 		93CB433E1BEA44F500992134 /* DEMGameEngineSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 93CB433D1BEA44F500992134 /* DEMGameEngineSpec.m */; };
 		93CB433F1BEA45B200992134 /* DEMGameEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 93CB433B1BEA43B100992134 /* DEMGameEngine.m */; };
 		93CB43421BEA53DE00992134 /* DEMStoreVMSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 93CB43411BEA53DE00992134 /* DEMStoreVMSpec.m */; };
+		93CB43451BEA58FE00992134 /* DEMWaveEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 93CB43441BEA58FE00992134 /* DEMWaveEngine.m */; };
+		93CB43461BEA590600992134 /* DEMWaveEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 93CB43441BEA58FE00992134 /* DEMWaveEngine.m */; };
+		93CB434A1BEA5D8C00992134 /* DEMWave.m in Sources */ = {isa = PBXBuildFile; fileRef = 93CB43491BEA5D8C00992134 /* DEMWave.m */; };
+		93CB434B1BEA5D8C00992134 /* DEMWave.m in Sources */ = {isa = PBXBuildFile; fileRef = 93CB43491BEA5D8C00992134 /* DEMWave.m */; };
 		B7CB441D062B7C5F3C55FE60 /* Pods_Demo1Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A681A05573403E4E62047105 /* Pods_Demo1Tests.framework */; };
 		E2130BA60C35D8CD16147B26 /* Pods_Demo1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72F039815E1FD4EA46FFC19A /* Pods_Demo1.framework */; };
 /* End PBXBuildFile section */
@@ -70,6 +74,7 @@
 		930F70ED1BE65E2100F18626 /* DEMEnergyCellModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEMEnergyCellModel.h; sourceTree = "<group>"; };
 		930F70EE1BE65E2100F18626 /* DEMEnergyCellModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEMEnergyCellModel.m; sourceTree = "<group>"; };
 		930F70F21BE6667000F18626 /* DEMWarehouseItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEMWarehouseItem.h; sourceTree = "<group>"; };
+		932BE4841BEA6B4200201FA3 /* DEMWaveSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEMWaveSpec.m; sourceTree = "<group>"; };
 		93BFF3E41BE646E200EB4B29 /* Demo1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Demo1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93BFF3E81BE646E200EB4B29 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		93BFF3EA1BE646E200EB4B29 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -81,7 +86,6 @@
 		93BFF3F61BE646E200EB4B29 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		93BFF3F81BE646E200EB4B29 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		93BFF3FD1BE646E200EB4B29 /* Demo1Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Demo1Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		93BFF4011BE646E200EB4B29 /* Demo1Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Demo1Tests.m; sourceTree = "<group>"; };
 		93BFF4031BE646E200EB4B29 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		93BFF40D1BE64B5B00EB4B29 /* DEMBaseVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEMBaseVC.h; sourceTree = "<group>"; };
 		93BFF40E1BE64B5B00EB4B29 /* DEMBaseVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEMBaseVC.m; sourceTree = "<group>"; };
@@ -97,6 +101,11 @@
 		93CB433D1BEA44F500992134 /* DEMGameEngineSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEMGameEngineSpec.m; sourceTree = "<group>"; };
 		93CB43401BEA4D5800992134 /* DEMGameEngineProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEMGameEngineProtocol.h; sourceTree = "<group>"; };
 		93CB43411BEA53DE00992134 /* DEMStoreVMSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEMStoreVMSpec.m; sourceTree = "<group>"; };
+		93CB43431BEA58FE00992134 /* DEMWaveEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEMWaveEngine.h; sourceTree = "<group>"; };
+		93CB43441BEA58FE00992134 /* DEMWaveEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEMWaveEngine.m; sourceTree = "<group>"; };
+		93CB43471BEA594700992134 /* DEMPrefix-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DEMPrefix-Header.h"; sourceTree = "<group>"; };
+		93CB43481BEA5D8C00992134 /* DEMWave.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEMWave.h; sourceTree = "<group>"; };
+		93CB43491BEA5D8C00992134 /* DEMWave.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEMWave.m; sourceTree = "<group>"; };
 		A681A05573403E4E62047105 /* Pods_Demo1Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Demo1Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C80D8E5EB4F07368B3B4CC2C /* Pods-Demo1Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demo1Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Demo1Tests/Pods-Demo1Tests.release.xcconfig"; sourceTree = "<group>"; };
 		CDDC09EE2B121FC82D96597A /* Pods-Demo1.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demo1.release.xcconfig"; path = "Pods/Target Support Files/Pods-Demo1/Pods-Demo1.release.xcconfig"; sourceTree = "<group>"; };
@@ -230,6 +239,7 @@
 			isa = PBXGroup;
 			children = (
 				93BFF3E81BE646E200EB4B29 /* main.m */,
+				93CB43471BEA594700992134 /* DEMPrefix-Header.h */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -237,12 +247,12 @@
 		93BFF4001BE646E200EB4B29 /* Demo1Tests */ = {
 			isa = PBXGroup;
 			children = (
-				93BFF4011BE646E200EB4B29 /* Demo1Tests.m */,
-				93BFF4031BE646E200EB4B29 /* Info.plist */,
 				93CB433D1BEA44F500992134 /* DEMGameEngineSpec.m */,
 				93CB43351BEA3F6F00992134 /* DEMMotherShipVMSpec.m */,
-				93CB413F1BE9DD5B00992134 /* DEMWarehouseVMSpec.m */,
 				93CB43411BEA53DE00992134 /* DEMStoreVMSpec.m */,
+				93CB413F1BE9DD5B00992134 /* DEMWarehouseVMSpec.m */,
+				932BE4841BEA6B4200201FA3 /* DEMWaveSpec.m */,
+				93BFF4031BE646E200EB4B29 /* Info.plist */,
 			);
 			path = Demo1Tests;
 			sourceTree = "<group>";
@@ -261,6 +271,7 @@
 		93CB43331BEA3CFC00992134 /* GameCore */ = {
 			isa = PBXGroup;
 			children = (
+				93CB434C1BEA5DF400992134 /* Wave */,
 				93CB43341BEA3DB300992134 /* DEMBattleProtocol.h */,
 				93CB43371BEA42D900992134 /* DEMGameCore.h */,
 				93CB43381BEA42D900992134 /* DEMGameCore.m */,
@@ -269,6 +280,17 @@
 				93CB43401BEA4D5800992134 /* DEMGameEngineProtocol.h */,
 			);
 			name = GameCore;
+			sourceTree = "<group>";
+		};
+		93CB434C1BEA5DF400992134 /* Wave */ = {
+			isa = PBXGroup;
+			children = (
+				93CB43481BEA5D8C00992134 /* DEMWave.h */,
+				93CB43491BEA5D8C00992134 /* DEMWave.m */,
+				93CB43431BEA58FE00992134 /* DEMWaveEngine.h */,
+				93CB43441BEA58FE00992134 /* DEMWaveEngine.m */,
+			);
+			name = Wave;
 			sourceTree = "<group>";
 		};
 		F69749A520297BDE27B358A7 /* Pods */ = {
@@ -495,6 +517,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93CB43451BEA58FE00992134 /* DEMWaveEngine.m in Sources */,
 				930F70E21BE6572B00F18626 /* DEMGameVM.m in Sources */,
 				93BFF40F1BE64B5B00EB4B29 /* DEMBaseVC.m in Sources */,
 				93BFF3EF1BE646E200EB4B29 /* ViewController.m in Sources */,
@@ -507,6 +530,7 @@
 				93BFF4131BE64D6100EB4B29 /* DEMMotherShipVM.m in Sources */,
 				930F70EF1BE65E2100F18626 /* DEMEnergyCellModel.m in Sources */,
 				930F70DE1BE6557A00F18626 /* DEMGravizzappa.m in Sources */,
+				93CB434A1BEA5D8C00992134 /* DEMWave.m in Sources */,
 				930F70D91BE6535900F18626 /* DEMStoreVM.m in Sources */,
 				930F70D61BE652FD00F18626 /* DEMStoreVC.m in Sources */,
 			);
@@ -522,12 +546,14 @@
 				93CB43361BEA3F6F00992134 /* DEMMotherShipVMSpec.m in Sources */,
 				93CB43421BEA53DE00992134 /* DEMStoreVMSpec.m in Sources */,
 				93CB433F1BEA45B200992134 /* DEMGameEngine.m in Sources */,
+				93CB434B1BEA5D8C00992134 /* DEMWave.m in Sources */,
 				930F70F01BE65E2100F18626 /* DEMEnergyCellModel.m in Sources */,
 				930F70E31BE6572B00F18626 /* DEMGameVM.m in Sources */,
 				930F70EC1BE65D8A00F18626 /* DEMWarehouseVM.m in Sources */,
+				93CB43461BEA590600992134 /* DEMWaveEngine.m in Sources */,
 				930F70DF1BE6557A00F18626 /* DEMGravizzappa.m in Sources */,
+				932BE4851BEA6B4200201FA3 /* DEMWaveSpec.m in Sources */,
 				93CB41401BE9DD5B00992134 /* DEMWarehouseVMSpec.m in Sources */,
-				93BFF4021BE646E200EB4B29 /* Demo1Tests.m in Sources */,
 				93CB433E1BEA44F500992134 /* DEMGameEngineSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -647,6 +673,8 @@
 			baseConfigurationReference = 77D90EAE768F62B9B31204C2 /* Pods-Demo1.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Demo1/DEMPrefix-Header.h";
 				INFOPLIST_FILE = Demo1/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -660,6 +688,8 @@
 			baseConfigurationReference = CDDC09EE2B121FC82D96597A /* Pods-Demo1.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Demo1/DEMPrefix-Header.h";
 				INFOPLIST_FILE = Demo1/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -672,6 +702,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D815CE3EA7C2B65981FD82A3 /* Pods-Demo1Tests.debug.xcconfig */;
 			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Demo1/DEMPrefix-Header.h";
 				INFOPLIST_FILE = Demo1Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = demo.Demo1Tests;
@@ -683,6 +715,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C80D8E5EB4F07368B3B4CC2C /* Pods-Demo1Tests.release.xcconfig */;
 			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Demo1/DEMPrefix-Header.h";
 				INFOPLIST_FILE = Demo1Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = demo.Demo1Tests;

@@ -31,7 +31,7 @@ describe(@"DEMGameEngine", ^{
 		NSObject<DEMGameEngineProtocol> *delegate = [KWMock mockForProtocol:@protocol(DEMGameEngineProtocol)];
 		engine.delegate = delegate;
 
-		[[delegate shouldEventually] receive:@selector(tick)];
+		[[delegate shouldEventually] receive:@selector(tick) withCountAtLeast:1];
 		[engine start];
 	});
 
