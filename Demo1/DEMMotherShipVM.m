@@ -1,17 +1,9 @@
-//
-//  DEMMotherShipVM.m
-//  Demo1
-//
-//  Created by tea on 01/11/15.
-//  Copyright © 2015 demo. All rights reserved.
-//
-
 #import "DEMMotherShipVM.h"
-
 
 @interface DEMMotherShipVM ()
 
 @property (nonatomic, strong) DEMEnergyCellModel *currentEnergyCell;
+@property (nonatomic, strong, readonly) DEMGravizzappa *gravizzappa;
 
 @end
 
@@ -50,6 +42,30 @@
 
 - (void)storeWarehouseItem:(id<DEMWarehouseItem>)item {
 	[_warehouse storeItem:item];
+}
+
+- (void)installGravizzappa:(DEMGravizzappa *)gravizzappa {
+	_gravizzappa = gravizzappa;
+	NSLog(@"Gravizzappa has been installed!");
+}
+
+#pragma mark DEMBattleProtocol
+
+- (double)attackDamage
+{
+	return 0.0;
+}
+
+- (void)receiveDamage:(double)damage
+{
+	self.currentEnergyLevel -= damage;
+}
+
+#pragma mark DEMGameEngineProtocol
+
+- (void)tick
+{
+	
 }
 
 @end

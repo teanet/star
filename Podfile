@@ -12,6 +12,7 @@ end
 target 'Demo1Tests' do
 
 pod 'ReactiveCocoa', '~> 2.5'
+pod 'Kiwi'
 
 end
 

@@ -1,0 +1,17 @@
+#!/bin/bash
+
+CURRENT_DIR="$(pwd)"
+WORKSPACE="Demo1.xcworkspace"
+SCHEME="Demo1"
+KW_SPEC="DGSRootVCSpec"
+
+DESTINATION="platform=iOS Simulator,name=iPhone 6"
+
+XCODEBUILD_FLAGS=(-destination "${DESTINATION}" -workspace "${WORKSPACE}" -scheme "${SCHEME}" -enableCodeCoverage YES )
+
+echo "*** Running tests on $DESTINATION"
+xcodebuild test \
+    "${XCODEBUILD_FLAGS[@]}" \
+    2>&1 | xcpretty -c
+
+cd "${CURRENT_DIR}"

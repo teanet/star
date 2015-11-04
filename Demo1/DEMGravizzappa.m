@@ -6,9 +6,9 @@
 //  Copyright © 2015 demo. All rights reserved.
 //
 
-#import "DEMGravizappa.h"
+#import "DEMGravizzappa.h"
 
-@implementation DEMGravizappa
+@implementation DEMGravizzappa
 
 @synthesize name = _name;
 @synthesize price = _price;

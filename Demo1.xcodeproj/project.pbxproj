@@ -9,8 +9,8 @@
 /* Begin PBXBuildFile section */
 		930F70D61BE652FD00F18626 /* DEMStoreVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 930F70D51BE652FD00F18626 /* DEMStoreVC.m */; };
 		930F70D91BE6535900F18626 /* DEMStoreVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 930F70D81BE6535900F18626 /* DEMStoreVM.m */; };
-		930F70DE1BE6557A00F18626 /* DEMGravizappa.m in Sources */ = {isa = PBXBuildFile; fileRef = 930F70DD1BE6557A00F18626 /* DEMGravizappa.m */; };
-		930F70DF1BE6557A00F18626 /* DEMGravizappa.m in Sources */ = {isa = PBXBuildFile; fileRef = 930F70DD1BE6557A00F18626 /* DEMGravizappa.m */; };
+		930F70DE1BE6557A00F18626 /* DEMGravizzappa.m in Sources */ = {isa = PBXBuildFile; fileRef = 930F70DD1BE6557A00F18626 /* DEMGravizzappa.m */; };
+		930F70DF1BE6557A00F18626 /* DEMGravizzappa.m in Sources */ = {isa = PBXBuildFile; fileRef = 930F70DD1BE6557A00F18626 /* DEMGravizzappa.m */; };
 		930F70E21BE6572B00F18626 /* DEMGameVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 930F70E11BE6572B00F18626 /* DEMGameVM.m */; };
 		930F70E31BE6572B00F18626 /* DEMGameVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 930F70E11BE6572B00F18626 /* DEMGameVM.m */; };
 		930F70E71BE6589200F18626 /* DEMStoreItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 930F70E61BE6589200F18626 /* DEMStoreItemCell.m */; };
@@ -29,6 +29,14 @@
 		93BFF40F1BE64B5B00EB4B29 /* DEMBaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 93BFF40E1BE64B5B00EB4B29 /* DEMBaseVC.m */; };
 		93BFF4131BE64D6100EB4B29 /* DEMMotherShipVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 93BFF4121BE64D6100EB4B29 /* DEMMotherShipVM.m */; };
 		93BFF4141BE64D6100EB4B29 /* DEMMotherShipVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 93BFF4121BE64D6100EB4B29 /* DEMMotherShipVM.m */; };
+		93CB41401BE9DD5B00992134 /* DEMWarehouseVMSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 93CB413F1BE9DD5B00992134 /* DEMWarehouseVMSpec.m */; };
+		93CB41411BE9E49000992134 /* DEMStoreVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 930F70D81BE6535900F18626 /* DEMStoreVM.m */; };
+		93CB43361BEA3F6F00992134 /* DEMMotherShipVMSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 93CB43351BEA3F6F00992134 /* DEMMotherShipVMSpec.m */; };
+		93CB43391BEA42D900992134 /* DEMGameCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 93CB43381BEA42D900992134 /* DEMGameCore.m */; };
+		93CB433C1BEA43B100992134 /* DEMGameEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 93CB433B1BEA43B100992134 /* DEMGameEngine.m */; };
+		93CB433E1BEA44F500992134 /* DEMGameEngineSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 93CB433D1BEA44F500992134 /* DEMGameEngineSpec.m */; };
+		93CB433F1BEA45B200992134 /* DEMGameEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 93CB433B1BEA43B100992134 /* DEMGameEngine.m */; };
+		93CB43421BEA53DE00992134 /* DEMStoreVMSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 93CB43411BEA53DE00992134 /* DEMStoreVMSpec.m */; };
 		B7CB441D062B7C5F3C55FE60 /* Pods_Demo1Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A681A05573403E4E62047105 /* Pods_Demo1Tests.framework */; };
 		E2130BA60C35D8CD16147B26 /* Pods_Demo1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72F039815E1FD4EA46FFC19A /* Pods_Demo1.framework */; };
 /* End PBXBuildFile section */
@@ -51,8 +59,8 @@
 		930F70D71BE6535900F18626 /* DEMStoreVM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEMStoreVM.h; sourceTree = "<group>"; };
 		930F70D81BE6535900F18626 /* DEMStoreVM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEMStoreVM.m; sourceTree = "<group>"; };
 		930F70DB1BE653BB00F18626 /* DEMStoreItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEMStoreItem.h; sourceTree = "<group>"; };
-		930F70DC1BE6557A00F18626 /* DEMGravizappa.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEMGravizappa.h; sourceTree = "<group>"; };
-		930F70DD1BE6557A00F18626 /* DEMGravizappa.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEMGravizappa.m; sourceTree = "<group>"; };
+		930F70DC1BE6557A00F18626 /* DEMGravizzappa.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEMGravizzappa.h; sourceTree = "<group>"; };
+		930F70DD1BE6557A00F18626 /* DEMGravizzappa.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEMGravizzappa.m; sourceTree = "<group>"; };
 		930F70E01BE6572B00F18626 /* DEMGameVM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEMGameVM.h; sourceTree = "<group>"; };
 		930F70E11BE6572B00F18626 /* DEMGameVM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEMGameVM.m; sourceTree = "<group>"; };
 		930F70E51BE6589200F18626 /* DEMStoreItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEMStoreItemCell.h; sourceTree = "<group>"; };
@@ -79,6 +87,16 @@
 		93BFF40E1BE64B5B00EB4B29 /* DEMBaseVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEMBaseVC.m; sourceTree = "<group>"; };
 		93BFF4111BE64D6100EB4B29 /* DEMMotherShipVM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEMMotherShipVM.h; sourceTree = "<group>"; };
 		93BFF4121BE64D6100EB4B29 /* DEMMotherShipVM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEMMotherShipVM.m; sourceTree = "<group>"; };
+		93CB413F1BE9DD5B00992134 /* DEMWarehouseVMSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEMWarehouseVMSpec.m; sourceTree = "<group>"; };
+		93CB43341BEA3DB300992134 /* DEMBattleProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEMBattleProtocol.h; sourceTree = "<group>"; };
+		93CB43351BEA3F6F00992134 /* DEMMotherShipVMSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEMMotherShipVMSpec.m; sourceTree = "<group>"; };
+		93CB43371BEA42D900992134 /* DEMGameCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEMGameCore.h; sourceTree = "<group>"; };
+		93CB43381BEA42D900992134 /* DEMGameCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEMGameCore.m; sourceTree = "<group>"; };
+		93CB433A1BEA43B100992134 /* DEMGameEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEMGameEngine.h; sourceTree = "<group>"; };
+		93CB433B1BEA43B100992134 /* DEMGameEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEMGameEngine.m; sourceTree = "<group>"; };
+		93CB433D1BEA44F500992134 /* DEMGameEngineSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEMGameEngineSpec.m; sourceTree = "<group>"; };
+		93CB43401BEA4D5800992134 /* DEMGameEngineProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEMGameEngineProtocol.h; sourceTree = "<group>"; };
+		93CB43411BEA53DE00992134 /* DEMStoreVMSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEMStoreVMSpec.m; sourceTree = "<group>"; };
 		A681A05573403E4E62047105 /* Pods_Demo1Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Demo1Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C80D8E5EB4F07368B3B4CC2C /* Pods-Demo1Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demo1Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Demo1Tests/Pods-Demo1Tests.release.xcconfig"; sourceTree = "<group>"; };
 		CDDC09EE2B121FC82D96597A /* Pods-Demo1.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demo1.release.xcconfig"; path = "Pods/Target Support Files/Pods-Demo1/Pods-Demo1.release.xcconfig"; sourceTree = "<group>"; };
@@ -132,8 +150,8 @@
 				930F70DB1BE653BB00F18626 /* DEMStoreItem.h */,
 				930F70D71BE6535900F18626 /* DEMStoreVM.h */,
 				930F70D81BE6535900F18626 /* DEMStoreVM.m */,
-				930F70DC1BE6557A00F18626 /* DEMGravizappa.h */,
-				930F70DD1BE6557A00F18626 /* DEMGravizappa.m */,
+				930F70DC1BE6557A00F18626 /* DEMGravizzappa.h */,
+				930F70DD1BE6557A00F18626 /* DEMGravizzappa.m */,
 			);
 			name = Store;
 			sourceTree = "<group>";
@@ -150,6 +168,7 @@
 		930F70F11BE65E2B00F18626 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				93CB43331BEA3CFC00992134 /* GameCore */,
 				930F70F31BE670AB00F18626 /* Warehouse */,
 				93BFF4111BE64D6100EB4B29 /* DEMMotherShipVM.h */,
 				93BFF4121BE64D6100EB4B29 /* DEMMotherShipVM.m */,
@@ -220,6 +239,10 @@
 			children = (
 				93BFF4011BE646E200EB4B29 /* Demo1Tests.m */,
 				93BFF4031BE646E200EB4B29 /* Info.plist */,
+				93CB433D1BEA44F500992134 /* DEMGameEngineSpec.m */,
+				93CB43351BEA3F6F00992134 /* DEMMotherShipVMSpec.m */,
+				93CB413F1BE9DD5B00992134 /* DEMWarehouseVMSpec.m */,
+				93CB43411BEA53DE00992134 /* DEMStoreVMSpec.m */,
 			);
 			path = Demo1Tests;
 			sourceTree = "<group>";
@@ -233,6 +256,19 @@
 				930F70F11BE65E2B00F18626 /* Models */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		93CB43331BEA3CFC00992134 /* GameCore */ = {
+			isa = PBXGroup;
+			children = (
+				93CB43341BEA3DB300992134 /* DEMBattleProtocol.h */,
+				93CB43371BEA42D900992134 /* DEMGameCore.h */,
+				93CB43381BEA42D900992134 /* DEMGameCore.m */,
+				93CB433A1BEA43B100992134 /* DEMGameEngine.h */,
+				93CB433B1BEA43B100992134 /* DEMGameEngine.m */,
+				93CB43401BEA4D5800992134 /* DEMGameEngineProtocol.h */,
+			);
+			name = GameCore;
 			sourceTree = "<group>";
 		};
 		F69749A520297BDE27B358A7 /* Pods */ = {
@@ -305,7 +341,6 @@
 					};
 					93BFF3FC1BE646E200EB4B29 = {
 						CreatedOnToolsVersion = 7.1;
-						TestTargetID = 93BFF3E31BE646E200EB4B29;
 					};
 				};
 			};
@@ -463,13 +498,15 @@
 				930F70E21BE6572B00F18626 /* DEMGameVM.m in Sources */,
 				93BFF40F1BE64B5B00EB4B29 /* DEMBaseVC.m in Sources */,
 				93BFF3EF1BE646E200EB4B29 /* ViewController.m in Sources */,
+				93CB43391BEA42D900992134 /* DEMGameCore.m in Sources */,
 				93BFF3EC1BE646E200EB4B29 /* AppDelegate.m in Sources */,
 				930F70EB1BE65D8A00F18626 /* DEMWarehouseVM.m in Sources */,
+				93CB433C1BEA43B100992134 /* DEMGameEngine.m in Sources */,
 				93BFF3E91BE646E200EB4B29 /* main.m in Sources */,
 				930F70E71BE6589200F18626 /* DEMStoreItemCell.m in Sources */,
 				93BFF4131BE64D6100EB4B29 /* DEMMotherShipVM.m in Sources */,
 				930F70EF1BE65E2100F18626 /* DEMEnergyCellModel.m in Sources */,
-				930F70DE1BE6557A00F18626 /* DEMGravizappa.m in Sources */,
+				930F70DE1BE6557A00F18626 /* DEMGravizzappa.m in Sources */,
 				930F70D91BE6535900F18626 /* DEMStoreVM.m in Sources */,
 				930F70D61BE652FD00F18626 /* DEMStoreVC.m in Sources */,
 			);
@@ -480,12 +517,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				930F70E81BE6589200F18626 /* DEMStoreItemCell.m in Sources */,
+				93CB41411BE9E49000992134 /* DEMStoreVM.m in Sources */,
 				93BFF4141BE64D6100EB4B29 /* DEMMotherShipVM.m in Sources */,
+				93CB43361BEA3F6F00992134 /* DEMMotherShipVMSpec.m in Sources */,
+				93CB43421BEA53DE00992134 /* DEMStoreVMSpec.m in Sources */,
+				93CB433F1BEA45B200992134 /* DEMGameEngine.m in Sources */,
 				930F70F01BE65E2100F18626 /* DEMEnergyCellModel.m in Sources */,
 				930F70E31BE6572B00F18626 /* DEMGameVM.m in Sources */,
 				930F70EC1BE65D8A00F18626 /* DEMWarehouseVM.m in Sources */,
-				930F70DF1BE6557A00F18626 /* DEMGravizappa.m in Sources */,
+				930F70DF1BE6557A00F18626 /* DEMGravizzappa.m in Sources */,
+				93CB41401BE9DD5B00992134 /* DEMWarehouseVMSpec.m in Sources */,
 				93BFF4021BE646E200EB4B29 /* Demo1Tests.m in Sources */,
+				93CB433E1BEA44F500992134 /* DEMGameEngineSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -629,12 +672,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D815CE3EA7C2B65981FD82A3 /* Pods-Demo1Tests.debug.xcconfig */;
 			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = Demo1Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = demo.Demo1Tests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Demo1.app/Demo1";
 			};
 			name = Debug;
 		};
@@ -642,12 +683,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C80D8E5EB4F07368B3B4CC2C /* Pods-Demo1Tests.release.xcconfig */;
 			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = Demo1Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = demo.Demo1Tests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Demo1.app/Demo1";
 			};
 			name = Release;
 		};

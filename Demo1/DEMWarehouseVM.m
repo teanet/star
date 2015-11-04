@@ -10,11 +10,14 @@
 
 @interface DEMWarehouseVM ()
 
-@property (nonatomic, strong) NSMutableSet<id<DEMWarehouseItem>> *items;
 
 @end
 
-@implementation DEMWarehouseVM
+@implementation DEMWarehouseVM {
+	NSMutableSet<id<DEMWarehouseItem>> *_items;
+}
+
+@synthesize items=_items;
 
 - (instancetype)init {
 	self = [super init];

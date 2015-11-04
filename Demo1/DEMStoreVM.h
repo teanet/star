@@ -1,18 +1,11 @@
-//
-//  DEMStoreVM.h
-//  Demo1
-//
-//  Created by tea on 01/11/15.
-//  Copyright © 2015 demo. All rights reserved.
-//
-
 #import <Foundation/Foundation.h>
 #import "DEMStoreItem.h"
-@class DEMMotherShipVM;
+#import "DEMMotherShipVM.h"
 
 @interface DEMStoreVM : NSObject
 
 @property (nonatomic, strong) NSArray<NSObject<DEMStoreItem> *> *items;
+@property (nonatomic, weak, readonly) DEMMotherShipVM *motherShipVM;
 
 - (instancetype)initWithMotherShipVM:(DEMMotherShipVM *)motherShipVM;
 - (BOOL)canPurchaseItem:(NSObject<DEMStoreItem> *)storeItem;

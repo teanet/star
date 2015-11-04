@@ -1,20 +1,11 @@
-//
-//  DEMStoreVM.m
-//  Demo1
-//
-//  Created by tea on 01/11/15.
-//  Copyright © 2015 demo. All rights reserved.
-//
-
 #import "DEMStoreVM.h"
-#import "DEMGravizappa.h"
+#import "DEMGravizzappa.h"
 #import "DEMMotherShipVM.h"
-#import "DEMGravizappa.h"
+#import "DEMGravizzappa.h"
 
 @implementation DEMStoreVM {
 	NSMutableArray<NSObject<DEMStoreItem> *> *_items;
-	DEMMotherShipVM *_motherShipVM;
-	DEMGravizappa *_gravizappa;
+	DEMGravizzappa *_gravizzappa;
 }
 
 @synthesize items=_items;
@@ -26,7 +17,7 @@
 
 	_items = [NSMutableArray array];
 	_motherShipVM = motherShipVM;
-	[_items addObject:[DEMGravizappa new]];
+	[_items addObject:[DEMGravizzappa new]];
 
 	return self;
 }
@@ -36,9 +27,11 @@
 }
 
 - (void)installItem:(NSObject<DEMStoreItem> *)storeItem {
-	if ([storeItem isKindOfClass:[DEMGravizappa class]]) {
-		_gravizappa = (DEMGravizappa *)storeItem;
-		NSLog(@"Gravizappa installed");
+	if ([storeItem isKindOfClass:[DEMGravizzappa class]]) {
+		_gravizzappa = (DEMGravizzappa *)storeItem;
+		NSLog(@"Gravizappa has been bought!");
+
+		[self.motherShipVM installGravizzappa:_gravizzappa];
 	}
 }
 

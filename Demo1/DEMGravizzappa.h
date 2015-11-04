@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "DEMStoreItem.h"
 
-@interface DEMGravizappa : NSObject
+@interface DEMGravizzappa : NSObject
 <DEMStoreItem>
 
 @end
