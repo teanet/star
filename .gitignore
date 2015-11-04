@@ -21,7 +21,7 @@ DerivedData
 *.ipa
 
 # CocoaPods
-Pods
+Pods/
 Podfile.lock
 
 # Demo1
@@ -29,3 +29,5 @@ Demo1.xcworkspace
 
 # build
 test-reports/
+=======
+*.xcuserstate
