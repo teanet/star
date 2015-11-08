@@ -1,11 +1,3 @@
-//
-//  ViewController.m
-//  Demo1
-//
-//  Created by tea on 01/11/15.
-//  Copyright © 2015 demo. All rights reserved.
-//
-
 #import "ViewController.h"
 #import "DEMBaseVC.h"
 #import "DEMGameVM.h"
@@ -14,6 +6,7 @@
 @interface ViewController ()
 
 @property (nonatomic, strong) DEMGameVM *gameVM;
+@property (nonatomic, strong) UIProgressView *progressView;
 
 @end
 
@@ -29,7 +22,26 @@
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
+	self.navigationController.navigationBar.translucent = NO;
 
+	self.progressView = [[UIProgressView alloc] initWithProgressViewStyle:UIProgressViewStyleBar];
+	self.progressView.trackTintColor = [UIColor lightGrayColor];
+	[self.view addSubview:self.progressView];
+	[self.progressView mas_makeConstraints:^(MASConstraintMaker *make) {
+		make.leading.equalTo(self.view).with.offset(20.0);
+		make.top.equalTo(self.view).with.offset(20.0);
+		make.width.equalTo(self.view).with.dividedBy(2.0);
+	}];
+
+	RAC(self.progressView, progress) =
+		[RACObserve(self.gameVM.gameCore, progressVM.progress)
+			ignore:nil];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+	[super viewDidAppear:animated];
+	[self.gameVM.gameCore start];
 }
 
 - (IBAction)showBase:(id)sender {

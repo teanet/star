@@ -1,5 +1,6 @@
 #import "DEMBattleProtocol.h"
 #import "DEMClockEngineProtocol.h"
+#import "DEMProgressProtocol.h"
 
 extern const NSTimeInterval kDEMMinimumDurationTime;
 extern const NSTimeInterval kDEMMinimumScheduleTime;
@@ -14,11 +15,11 @@ typedef NS_OPTIONS(NSUInteger, DEMWaveState) {
 @interface DEMWave : NSObject
 <
 DEMBattleProtocol,
-DEMClockEngineProtocol
+DEMClockEngineProtocol,
+DEMProgressProtocol
 >
 
 @property (nonatomic, assign, readonly) uint32_t level;
-@property (nonatomic, assign, readonly) float progress;
 @property (nonatomic, assign, readonly) DEMWaveState state;
 
 /** Wave Duration - максимальное время активного действтия волны */

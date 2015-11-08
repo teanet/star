@@ -1,12 +1,10 @@
-//
-//  DEMGameVM.m
-//  Demo1
-//
-//  Created by tea on 01/11/15.
-//  Copyright © 2015 demo. All rights reserved.
-//
-
 #import "DEMGameVM.h"
+
+@interface DEMGameVM ()
+
+@property (nonatomic, strong) DEMGameCore *gameCore;
+
+@end
 
 @implementation DEMGameVM
 
@@ -14,10 +12,20 @@
 {
 	self = [super init];
 	if (self) {
-		_motherShipVM = [DEMMotherShipVM new];
-		_storeVM = [[DEMStoreVM alloc] initWithMotherShipVM:_motherShipVM];
+		_gameCore = [[DEMGameCore alloc] init];
+		_storeVM = [[DEMStoreVM alloc] initWithMotherShipVM:_gameCore.motherShip];
 	}
 	return self;
 }
+
+- (DEMMotherShipVM *)motherShipVM
+{
+	return _gameCore.motherShip;
+}
+
+//- (DEMStoreVM *)storeVM
+//{
+//	return _gameCore;
+//}
 
 @end

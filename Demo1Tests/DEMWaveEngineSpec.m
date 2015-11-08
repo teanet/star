@@ -19,6 +19,7 @@ describe(@"DEMWaveEngine", ^{
 		[_delegate stub:@selector(waveEngine:didChangeStateForWave:)];
 
 		_wave = [KWMock mockForClass:[DEMWave class]];
+		[_wave stub:@selector(activate:)];
 		return [[DEMWaveEngine alloc] initWithDelegate:_delegate];
 	});
 
@@ -50,6 +51,13 @@ describe(@"DEMWaveEngine", ^{
 		[[_delegate should] receive:@selector(waveEngine:didChangeStateForWave:)
 					  withArguments:waveEngine, _wave, nil];
 
+		[waveEngine addWave:_wave];
+
+	});
+
+	it(@"should chenge wave state to active when wave has been added", ^{
+
+		[[_wave should] receive:@selector(activate:) withArguments:theValue(YES), nil];
 		[waveEngine addWave:_wave];
 
 	});

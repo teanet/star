@@ -22,6 +22,7 @@
 - (void)addWave:(DEMWave *)wave
 {
 	[_waves addObject:wave];
+	[wave activate:YES];
 	[_delegate waveEngine:self didChangeStateForWave:wave];
 }
 

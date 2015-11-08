@@ -6,6 +6,7 @@ use_frameworks!
 target 'Demo1' do
 
 pod 'ReactiveCocoa', '~> 2.5'
+pod 'Masonry'
 
 end
 

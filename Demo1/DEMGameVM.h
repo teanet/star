@@ -1,17 +1,10 @@
-//
-//  DEMGameVM.h
-//  Demo1
-//
-//  Created by tea on 01/11/15.
-//  Copyright © 2015 demo. All rights reserved.
-//
-
-
 #import "DEMMotherShipVM.h"
 #import "DEMStoreVM.h"
+#import "DEMGameCore.h"
 
 @interface DEMGameVM : NSObject
 
+@property (nonatomic, strong, readonly) DEMGameCore *gameCore;
 @property (nonatomic, strong, readonly) DEMMotherShipVM *motherShipVM;
 @property (nonatomic, strong, readonly) DEMStoreVM *storeVM;
 
