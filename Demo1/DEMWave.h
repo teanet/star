@@ -1,18 +1,20 @@
 #import "DEMBattleProtocol.h"
-#import "DEMGameEngineProtocol.h"
+#import "DEMClockEngineProtocol.h"
 
 extern const NSTimeInterval kDEMMinimumDurationTime;
 extern const NSTimeInterval kDEMMinimumScheduleTime;
 
-typedef NS_ENUM(NSUInteger, DEMWaveState) {
-	DEMWaveStateScheduling = 0,
-	DEMWaveStateRunnig
+typedef NS_OPTIONS(NSUInteger, DEMWaveState) {
+	DEMWaveStateDead	= 0,
+	DEMWaveStateBorned	= 0,
+	DEMWaveStateActive	= 1 << 0,
+	DEMWaveStateRun		= 1 << 1,
 };
 
 @interface DEMWave : NSObject
 <
 DEMBattleProtocol,
-DEMGameEngineProtocol
+DEMClockEngineProtocol
 >
 
 @property (nonatomic, assign, readonly) uint32_t level;
@@ -24,6 +26,8 @@ DEMGameEngineProtocol
 
 /** Schedule Time - время ожидания волны */
 @property (nonatomic, assign, readonly) NSTimeInterval scheduleTime;
+
+- (void)activate:(BOOL)activate;
 
 - (void)pass;
 - (void)fail;

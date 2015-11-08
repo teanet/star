@@ -6,4 +6,6 @@
 
 @property (nonatomic, strong) DEMMotherShipVM *motherShip;
 
+- (void)start;
+
 @end

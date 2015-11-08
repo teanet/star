@@ -1,14 +1,14 @@
-#import "DEMGameEngine.h"
+#import "DEMClockEngine.h"
 
 const NSTimeInterval kDEMDefaultTimePeriod = 0.1;
 
-@interface DEMGameEngine ()
+@interface DEMClockEngine ()
 
 @property (nonatomic, strong)  NSTimer *timer;
 
 @end
 
-@implementation DEMGameEngine
+@implementation DEMClockEngine
 
 - (instancetype)init
 {
@@ -23,10 +23,15 @@ const NSTimeInterval kDEMDefaultTimePeriod = 0.1;
 - (void)start
 {
 	_timer = [NSTimer scheduledTimerWithTimeInterval:kDEMDefaultTimePeriod
-											  target:self.delegate
-											selector:@selector(tick)
+											  target:self
+											selector:@selector(tick:)
 											userInfo:nil
 											 repeats:YES];
+}
+
+- (void)tick:(NSTimer *)timer
+{
+	[self.delegate tick:kDEMDefaultTimePeriod];
 }
 
 - (void)stop

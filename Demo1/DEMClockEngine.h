@@ -1,13 +1,13 @@
 
 
-#import "DEMGameEngineProtocol.h"
+#import "DEMClockEngineProtocol.h"
 
 extern const NSTimeInterval kDEMDefaultTimePeriod;
 
-@interface DEMGameEngine : NSObject
+@interface DEMClockEngine : NSObject
 
 @property (nonatomic, assign) NSTimeInterval period;
-@property (nonatomic, weak) id<DEMGameEngineProtocol> delegate;
+@property (nonatomic, weak) id<DEMClockEngineProtocol> delegate;
 
 - (void)start;
 - (void)stop;

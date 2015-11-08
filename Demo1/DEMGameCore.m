@@ -1,10 +1,12 @@
 #import "DEMGameCore.h"
 
-#import "DEMGameEngine.h"
+#import "DEMClockEngine.h"
+#import "DEMWaveEngine.h"
 
-@interface DEMGameCore () <DEMGameEngineProtocol>
+@interface DEMGameCore () <DEMClockEngineProtocol, DEMWaveEngineDelegate>
 
-@property (nonatomic, strong, readonly) DEMGameEngine *engine;
+@property (nonatomic, strong, readonly) DEMClockEngine *clockEngine;
+@property (nonatomic, strong, readonly) DEMWaveEngine *waveEngine;
 
 @end
 
@@ -15,16 +17,33 @@
 	self = [super init];
 	if (self == nil) return nil;
 
-	_engine = [[DEMGameEngine alloc] init];
+	_waveEngine = [[DEMWaveEngine alloc] initWithDelegate:self];
+
+	_clockEngine = [[DEMClockEngine alloc] init];
+	_clockEngine.delegate = self;
+
 
 	return self;
 }
 
-#pragma mark DEMGameEngineDelegate
-
-- (void)tick
+- (void)start
 {
-	
+	[_waveEngine addWave:[[DEMWave alloc] init]];
+	[_clockEngine start];
+}
+
+#pragma mark DEMClockEngineDelegate
+
+- (void)tick:(NSTimeInterval)duration
+{
+	[_waveEngine tick:duration];
+}
+
+#pragma mark DEMWaveEngineDelegate
+
+- (void)waveEngine:(DEMWaveEngine *)engine didChangeStateForWave:(DEMWave *)wave
+{
+
 }
 
 @end

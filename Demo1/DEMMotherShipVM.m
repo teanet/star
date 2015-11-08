@@ -61,9 +61,9 @@
 	self.currentEnergyLevel -= damage;
 }
 
-#pragma mark DEMGameEngineProtocol
+#pragma mark DEMClockEngineProtocol
 
-- (void)tick
+- (void)tick:(NSTimeInterval)duration
 {
 	
 }

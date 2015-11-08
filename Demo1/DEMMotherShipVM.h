@@ -2,13 +2,13 @@
 #import "DEMEnergyCellModel.h"
 #import "DEMWarehouseVM.h"
 #import "DEMBattleProtocol.h"
-#import "DEMGameEngineProtocol.h"
+#import "DEMClockEngineProtocol.h"
 #import "DEMGravizzappa.h"
 
 @interface DEMMotherShipVM : NSObject
 <
 DEMBattleProtocol,
-DEMGameEngineProtocol
+DEMClockEngineProtocol
 >
 
 @property (nonatomic, assign) double currentEnergyLevel;

@@ -1,18 +1,18 @@
 #import <Kiwi/Kiwi.h>
-#import "DEMGameEngine.h"
+#import "DEMClockEngine.h"
 
-@interface DEMGameEngine (DEMTesting)
+@interface DEMClockEngine (DEMTesting)
 
 @property (nonatomic, strong)  NSTimer *timer;
 
 @end
 
-SPEC_BEGIN(DEMGameEngineSpec)
+SPEC_BEGIN(DEMClockEngineSpec)
 
-describe(@"DEMGameEngine", ^{
+describe(@"DEMClockEngine", ^{
 
-	let(engine, ^DEMGameEngine *{
-		return [[DEMGameEngine alloc] init];
+	let(engine, ^DEMClockEngine *{
+		return [[DEMClockEngine alloc] init];
 	});
 
 	it(@"Should create engine with default time period", ^{
@@ -28,10 +28,10 @@ describe(@"DEMGameEngine", ^{
 
 	it(@"Engine should receive tick", ^{
 
-		NSObject<DEMGameEngineProtocol> *delegate = [KWMock mockForProtocol:@protocol(DEMGameEngineProtocol)];
+		NSObject<DEMClockEngineProtocol> *delegate = [KWMock mockForProtocol:@protocol(DEMClockEngineProtocol)];
 		engine.delegate = delegate;
 
-		[[delegate shouldEventually] receive:@selector(tick) withCountAtLeast:1];
+		[[delegate shouldEventually] receive:@selector(tick:) withCountAtLeast:1];
 		[engine start];
 	});
 
