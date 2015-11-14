@@ -10,8 +10,11 @@
 @property (nonatomic, strong, readonly) DEMClockEngine *clockEngine;
 @property (nonatomic, strong, readonly) DEMWaveEngine *waveEngine;
 @property (nonatomic, strong, readonly) DEMBattleEngine *battleEngine;
+@property (nonatomic, strong, readonly) NSMutableArray<id<DEMClockEngineProtocol>> *engines;
 
 - (void)tick:(NSTimeInterval)duration;
+- (void)performInitialSubscribes;
+- (void)gameDidLose;
 
 @end
 
@@ -29,6 +32,16 @@ describe(@"DEMGameCore", ^{
 		[[core.clockEngine shouldNot] beNil];
 		[[core.waveEngine shouldNot] beNil];
 		[[core.battleEngine shouldNot] beNil];
+
+	});
+
+	it(@"engines order is mandotory", ^{
+
+		[[(id)core.engines should] equal:@[
+										   core.motherShip,
+										   core.waveEngine,
+										   core.battleEngine,
+										   ]];
 
 	});
 
@@ -51,6 +64,7 @@ describe(@"DEMGameCore", ^{
 
 		[[core.waveEngine should] receive:@selector(tick:)];
 		[[core.battleEngine should] receive:@selector(tick:)];
+		[[core.motherShip should] receive:@selector(tick:)];
 		[core tick:0.0];
 
 	});
@@ -59,6 +73,34 @@ describe(@"DEMGameCore", ^{
 
 		[core start];
 		[[theValue(core.waveEngine.activeWavesCount) should] equal:@1];
+
+	});
+
+	context(@"subscribe", ^{
+
+		__block RACSubject *energyStateSignal = nil;
+		beforeEach(^{
+			energyStateSignal = [RACSubject subject];
+			[core.motherShip stub:@selector(energyStateSignal) andReturn:energyStateSignal];
+		});
+
+		it(@"should receive did finish game signal when mothership energy become empty", ^{
+
+			[core performInitialSubscribes];
+			[[core should] receive:@selector(gameDidLose)];
+			[energyStateSignal sendNext:@(DEMMotherShipEnegyStateEmpty)];
+
+		});
+
+		it(@"should handle lose", ^{
+
+			[[core should] receive:@selector(stop)];
+			NSNumber *reason = [core.didFinishGameSignal dgs_subscribeNextSyncWithActionBlock:^{
+				[core gameDidLose];
+			}];
+			[[reason should] equal:@(DEMGameFinishReasonLose)];
+
+		});
 
 	});
 

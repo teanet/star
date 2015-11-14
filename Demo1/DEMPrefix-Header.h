@@ -6,5 +6,6 @@
 
 #import <Masonry/Masonry.h>
 #import <ReactiveCocoa/ReactiveCocoa.h>
+#import "NSObject+DGSTestHelper.h"
 
 #endif /* DEMPrefix_Header_h */

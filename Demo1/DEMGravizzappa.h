@@ -1,15 +1,12 @@
-//
-//  DEMGravizappa.h
-//  Demo1
-//
-//  Created by tea on 01/11/15.
-//  Copyright © 2015 demo. All rights reserved.
-//
-
-
 #import "DEMStoreItem.h"
 
+extern const double kDEMGravizzappaPrice;
+
 @interface DEMGravizzappa : NSObject
-<DEMStoreItem>
+<
+DEMStoreItem
+>
+
+@property (nonatomic, assign, readonly) double energyPerSecond;
 
 @end

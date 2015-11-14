@@ -5,16 +5,27 @@
 @property (nonatomic, strong) DEMEnergyCellModel *currentEnergyCell;
 @property (nonatomic, strong, readonly) DEMGravizzappa *gravizzappa;
 
+@property (nonatomic, strong, readonly) RACSubject* energyStateSubject;
+
 @end
 
 @implementation DEMMotherShipVM
 
+- (void)dealloc {
+	[self.energyStateSubject sendCompleted];
+}
+
 - (instancetype)init {
 	self = [super init];
 	if (self) {
+
+		_energyStateSubject = [RACSubject subject];
+		_energyStateSignal = _energyStateSubject;
+
 		_warehouse = [DEMWarehouseVM new];
 		_currentEnergyCell = [self newEnergyCellWithEnergy:0.0];
 		_maxEnergyLevel = 100.0;
+
 	}
 	return self;
 }
@@ -35,6 +46,10 @@
 			[self storeWarehouseItem:storeCell];
 		}
 	}
+	else if (currentEnergyLevel < 0.0) {
+		_currentEnergyLevel = 0.0;
+		[self.energyStateSubject sendNext:@(DEMMotherShipEnegyStateEmpty)];
+	}
 	else {
 		_currentEnergyLevel = currentEnergyLevel;
 	}
@@ -51,8 +66,7 @@
 
 #pragma mark DEMBattleProtocol
 
-- (double)dps
-{
+- (double)dps {
 	return 0.0;
 }
 
@@ -64,9 +78,8 @@
 
 #pragma mark DEMClockEngineProtocol
 
-- (void)tick:(NSTimeInterval)duration
-{
-	
+- (void)tick:(NSTimeInterval)duration {
+	self.currentEnergyLevel += _gravizzappa.energyPerSecond * duration;
 }
 
 @end

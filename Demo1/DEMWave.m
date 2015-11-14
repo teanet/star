@@ -1,7 +1,7 @@
 #import "DEMWave.h"
 
 const NSTimeInterval kDEMMinimumDurationTime = 1.0;
-const NSTimeInterval kDEMMinimumScheduleTime = 3.0;
+const NSTimeInterval kDEMMinimumScheduleTime = 300.0;
 const NSTimeInterval kDEMDefaultDPS = 1.0;
 
 #define CHECK_ACTIVE_STATE() {if (!self.isActive) return;}

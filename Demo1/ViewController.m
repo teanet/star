@@ -22,6 +22,8 @@
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
+	@weakify(self);
+
 	self.navigationController.navigationBar.translucent = NO;
 
 	self.progressView = [[UIProgressView alloc] initWithProgressViewStyle:UIProgressViewStyleBar];
@@ -36,6 +38,23 @@
 	RAC(self.progressView, progress) =
 		[RACObserve(self.gameVM.gameCore, progressVM.progress)
 			ignore:nil];
+
+	[self.gameVM.gameCore.didFinishGameSignal subscribeNext:^(NSNumber *resaon) {
+		@strongify(self);
+
+		if (DEMGameFinishReasonLose == (DEMGameFinishReason)resaon.unsignedIntegerValue) {
+			[self showDidLoseAlert];
+		}
+	}];
+
+}
+
+- (void)showDidLoseAlert {
+	UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Вы так себе" message:nil delegate:nil cancelButtonTitle:@"Ага" otherButtonTitles:nil];
+	[[alert rac_buttonClickedSignal] subscribeNext:^(id _) {
+		exit(1);
+	}];
+	[alert show];
 }
 
 - (void)viewDidAppear:(BOOL)animated
