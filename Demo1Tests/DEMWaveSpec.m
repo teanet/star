@@ -23,6 +23,7 @@ describe(@"DEMWave", ^{
 		[[theValue(wave.scheduleTime) should] beGreaterThanOrEqualTo:theValue(kDEMMinimumScheduleTime)];
 		[[theValue(wave.state) should] equal:theValue(DEMWaveStateBorned)];
 		[[theValue(wave.progress) should] equal:0.0f withDelta:FLT_EPSILON];
+		[[theValue(wave.dps) should] equal:kDEMDefaultDPS withDelta:FLT_EPSILON];
 
 	});
 
@@ -69,6 +70,22 @@ describe(@"DEMWave", ^{
 		[wave tick:0.1];
 
 		[[theValue(wave.progress) should] beGreaterThan:theValue(0.0f)];
+
+	});
+
+	it(@"should get current time on duration more than totalWaveDuration", ^{
+
+		[wave activate:YES];
+		[wave tick:1000.0];
+		[[theValue(wave.currentTime) should] beLessThanOrEqualTo:theValue(wave.totalWaveDuration)];
+
+	});
+
+	it(@"progress should be less then 1.0", ^{
+
+		[wave activate:YES];
+		[wave tick:1000.0];
+		[[theValue(wave.progress) should] beLessThanOrEqualTo:theValue(1.0)];
 
 	});
 

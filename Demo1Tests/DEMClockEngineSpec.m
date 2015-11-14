@@ -23,6 +23,7 @@ describe(@"DEMClockEngine", ^{
 		[engine start];
 
 		[[engine.timer shouldNot] beNil];
+		[[theValue(engine.isRunning) should] beYes];
 		[[theValue(engine.timer.timeInterval) should] equal:kDEMDefaultTimePeriod withDelta:DBL_EPSILON];
 	});
 

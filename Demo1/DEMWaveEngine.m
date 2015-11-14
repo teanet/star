@@ -36,8 +36,13 @@
 - (void)tick:(NSTimeInterval)duration
 {
 	[_waves enumerateObjectsUsingBlock:^(DEMWave *wave, BOOL *stop) {
-//		DEMWaveState sta
+		DEMWaveState state = wave.state;
 		[wave tick:duration];
+		
+		if (state != wave.state)
+		{
+			[_delegate waveEngine:self didChangeStateForWave:wave];
+		}
 	}];
 }
 

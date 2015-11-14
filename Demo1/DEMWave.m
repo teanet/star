@@ -1,7 +1,8 @@
 #import "DEMWave.h"
-#import <UIKit/UIKit.h>
-const NSTimeInterval kDEMMinimumDurationTime = 30.0;
-const NSTimeInterval kDEMMinimumScheduleTime = 60.0;
+
+const NSTimeInterval kDEMMinimumDurationTime = 1.0;
+const NSTimeInterval kDEMMinimumScheduleTime = 3.0;
+const NSTimeInterval kDEMDefaultDPS = 1.0;
 
 #define CHECK_ACTIVE_STATE() {if (!self.isActive) return;}
 
@@ -16,8 +17,7 @@ const NSTimeInterval kDEMMinimumScheduleTime = 60.0;
 
 @synthesize state=_privateState;
 
-- (instancetype)init
-{
+- (instancetype)init {
 	self = [super init];
 	if (self == nil) return nil;
 	_duration = kDEMMinimumDurationTime;
@@ -28,73 +28,63 @@ const NSTimeInterval kDEMMinimumScheduleTime = 60.0;
 	return self;
 }
 
-- (NSTimeInterval)totalWaveDuration
-{
+- (NSTimeInterval)totalWaveDuration {
 	return _duration + _scheduleTime;
 }
 
-- (void)activate:(BOOL)activate
-{
+- (void)activate:(BOOL)activate {
 	_privateState = (activate) ? (_privateState | DEMWaveStateActive) : (_privateState & ~DEMWaveStateActive);
 }
 
-- (void)setRunning:(BOOL)running
-{
+- (void)setRunning:(BOOL)running {
 	_privateState = (running) ? (_privateState | DEMWaveStateRun) : (_privateState & ~DEMWaveStateRun);
 }
 
-- (BOOL)isActive
-{
+- (BOOL)isActive {
 	return DEMWaveStateActive == (_privateState & DEMWaveStateActive);
 }
 
-- (BOOL)isRunning
-{
+- (BOOL)isRunning {
 	return DEMWaveStateRun == (_privateState & DEMWaveStateRun);
 }
 
-- (void)pass
-{
+- (void)pass{
 
 }
 
-- (void)fail
-{
+- (void)fail {
 
 }
 
-- (void)updateProgress
-{
-	if (self.isRunning)
-	{
-		self.progress = (_currentTime - _scheduleTime) / _duration;
+- (void)updateProgress {
+	if (self.isRunning) {
+		self.progress = (self.currentTime - _scheduleTime) / _duration;
 	}
-	else
-	{
-		self.progress = _currentTime / _scheduleTime;
+	else {
+		self.progress = self.currentTime / _scheduleTime;
 	}
+}
+
+- (NSTimeInterval)currentTime {
+	return fmod(_currentTime, [self totalWaveDuration]);
 }
 
 #pragma mark DEMBattleProtocol
 
-- (double)attackDamage
-{
-	return 0.0;
+- (double)dps {
+	return kDEMDefaultDPS;
 }
 
-- (void)receiveDamage:(double)damage
-{
+- (void)receiveDamage:(double)damage {
 	
 }
 
 #pragma mark DEMClockEngineProtocol
 
-- (void)tick:(NSTimeInterval)duration
-{
+- (void)tick:(NSTimeInterval)duration {
 	CHECK_ACTIVE_STATE();
 
 	_currentTime += duration;
-	_currentTime = fmod(_currentTime, [self totalWaveDuration]);
 
 	[self setRunning:_currentTime >= _scheduleTime];
 	[self updateProgress];

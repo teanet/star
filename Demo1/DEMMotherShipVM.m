@@ -51,13 +51,14 @@
 
 #pragma mark DEMBattleProtocol
 
-- (double)attackDamage
+- (double)dps
 {
 	return 0.0;
 }
 
 - (void)receiveDamage:(double)damage
 {
+	NSLog(@"Mothership receive damage: %f", damage);
 	self.currentEnergyLevel -= damage;
 }
 

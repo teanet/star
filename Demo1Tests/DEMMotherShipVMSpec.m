@@ -31,7 +31,7 @@ describe(@"DEMMotherShipVM", ^{
 	});
 
 	it(@"Should get surrent mothership attack damage", ^{
-		[[theValue(mothership.attackDamage) should] equal:0.0 withDelta:DBL_EPSILON];
+		[[theValue(mothership.dps) should] equal:0.0 withDelta:DBL_EPSILON];
 	});
 
 	it(@"Should install gravizzappa", ^{

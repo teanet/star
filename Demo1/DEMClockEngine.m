@@ -20,6 +20,11 @@ const NSTimeInterval kDEMDefaultTimePeriod = 0.1;
 	return self;
 }
 
+- (BOOL)isRunning
+{
+	return (_timer != nil);
+}
+
 - (void)start
 {
 	_timer = [NSTimer scheduledTimerWithTimeInterval:kDEMDefaultTimePeriod
@@ -27,6 +32,8 @@ const NSTimeInterval kDEMDefaultTimePeriod = 0.1;
 											selector:@selector(tick:)
 											userInfo:nil
 											 repeats:YES];
+	NSLog(@">>%@", _timer);
+	NSLog(@">>%@", self.timer);
 }
 
 - (void)tick:(NSTimer *)timer
