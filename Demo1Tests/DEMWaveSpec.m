@@ -4,6 +4,9 @@
 @interface DEMWave (DEMTesting)
 
 @property (nonatomic, assign) NSTimeInterval currentTime;
+@property (nonatomic, assign) BOOL passed;
+
+- (void)setRunning:(BOOL)running;
 
 @end
 
@@ -24,6 +27,7 @@ describe(@"DEMWave", ^{
 		[[theValue(wave.state) should] equal:theValue(DEMWaveStateBorned)];
 		[[theValue(wave.progress) should] equal:0.0f withDelta:FLT_EPSILON];
 		[[theValue(wave.dps) should] equal:kDEMDefaultDPS withDelta:FLT_EPSILON];
+		[[theValue(wave.passed) should] beYes];
 
 	});
 
@@ -88,6 +92,46 @@ describe(@"DEMWave", ^{
 		[[theValue(wave.progress) should] beLessThanOrEqualTo:theValue(1.0)];
 
 	});
+
+	it(@"should change state from running to scheduling for active wave", ^{
+
+		[wave activate:YES];
+		[wave tick:wave.scheduleTime + 0.1];
+		[[theValue(wave.isRunning) should] beYes];
+		[wave tick:wave.duration];
+		[[theValue(wave.isRunning) should] beNo];
+
+	});
+
+	context(@"pass", ^{
+
+		it(@"should mark as passed", ^{
+
+			[wave markAsPassed:YES];
+			[[theValue(wave.passed) should] beYes];
+
+		});
+
+		it(@"should increase level", ^{
+
+			uint32_t _level = wave.level;
+			[wave markAsPassed:YES];
+			[wave finishBattle];
+			[[theValue(wave.level) should] beGreaterThan:theValue(_level)];
+			
+		});
+
+		it(@"should increase dps", ^{
+
+			double _dps = wave.dps;
+			[wave markAsPassed:YES];
+			[wave finishBattle];
+			[[theValue(wave.dps) should] beGreaterThan:theValue(_dps)];
+
+		});
+
+	});
+
 
 });
 

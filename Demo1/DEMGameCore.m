@@ -109,11 +109,11 @@
 
 	if (wave.isRunning)
 	{
-		[_battleEngine addAttacker:wave];
+		[_battleEngine battleWillStartForAttacker:wave];
 	}
 	else
 	{
-		[_battleEngine removeAttacker:wave];
+		[_battleEngine battleDidEndForAttacker:wave];
 	}
 }
 

@@ -93,6 +93,7 @@
 		933368EF1BF3909500600935 /* DEMBattleEngineSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEMBattleEngineSpec.m; sourceTree = "<group>"; };
 		936178431BF772A300A3BB3E /* NSObject+DGSTestHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+DGSTestHelper.h"; sourceTree = "<group>"; };
 		936178441BF772A300A3BB3E /* NSObject+DGSTestHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+DGSTestHelper.m"; sourceTree = "<group>"; };
+		939907481BFA2A88008BE268 /* DEMAttackerProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEMAttackerProtocol.h; sourceTree = "<group>"; };
 		93BFF3E41BE646E200EB4B29 /* Demo1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Demo1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93BFF3E81BE646E200EB4B29 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		93BFF3EA1BE646E200EB4B29 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -222,6 +223,7 @@
 				93CB43341BEA3DB300992134 /* DEMBattleProtocol.h */,
 				93CB43401BEA4D5800992134 /* DEMClockEngineProtocol.h */,
 				93163B0D1BEFAC9F007BDF03 /* DEMProgressProtocol.h */,
+				939907481BFA2A88008BE268 /* DEMAttackerProtocol.h */,
 			);
 			name = Protocols;
 			sourceTree = "<group>";
@@ -719,6 +721,7 @@
 			baseConfigurationReference = 77D90EAE768F62B9B31204C2 /* Pods-Demo1.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Demo1/DEMPrefix-Header.h";
 				INFOPLIST_FILE = Demo1/Info.plist;
@@ -734,6 +737,7 @@
 			baseConfigurationReference = CDDC09EE2B121FC82D96597A /* Pods-Demo1.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Demo1/DEMPrefix-Header.h";
 				INFOPLIST_FILE = Demo1/Info.plist;

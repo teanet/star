@@ -13,11 +13,11 @@ SPEC_BEGIN(DEMBattleEngineSpec)
 describe(@"DEMBattleEngine", ^{
 
 	__block DEMBattleEngine *engine = nil;
-	__block NSObject<DEMBattleProtocol> *attacker = nil;
+	__block NSObject<DEMAttackerProtocol> *attacker = nil;
 	__block NSObject<DEMBattleProtocol> *defender = nil;
 
 	beforeEach(^{
-		attacker = [KWMock mockForProtocol:@protocol(DEMBattleProtocol)];
+		attacker = [KWMock mockForProtocol:@protocol(DEMAttackerProtocol)];
 		[attacker stub:@selector(dps) andReturn:theValue(1.0)];
 		defender = [KWMock mockForProtocol:@protocol(DEMBattleProtocol)];
 		engine = [[DEMBattleEngine alloc] initWithDefender:defender];
@@ -30,27 +30,28 @@ describe(@"DEMBattleEngine", ^{
 		[[theValue(engine.attackersCount) should] equal:theValue(0)];
 	});
 
-	it(@"Should add attacker", ^{
-		[engine addAttacker:attacker];
+	it(@"Should start attack", ^{
+		[engine battleWillStartForAttacker:attacker];
 		[[engine.attackers should] haveCountOf:1];
 	});
 
-	it(@"Should remove attacker", ^{
-		[engine addAttacker:attacker];
-		[engine removeAttacker:attacker];
+	it(@"Should end attack", ^{
+		[[attacker should] receive:@selector(finishBattle)];
+		[engine battleWillStartForAttacker:attacker];
+		[engine battleDidEndForAttacker:attacker];
 		[[engine.attackers should] haveCountOf:0];
 	});
 
 	it(@"Should simulate attack", ^{
-		[engine addAttacker:attacker];
+		[engine battleWillStartForAttacker:attacker];
 		[[engine.defender should] receive:@selector(receiveDamage:)];
 
 		[engine tick:0.1];
 	});
 
 	it(@"Should simulate multiple attack", ^{
-		[engine addAttacker:attacker];
-		[engine addAttacker:attacker];
+		[engine battleWillStartForAttacker:attacker];
+		[engine battleWillStartForAttacker:attacker];
 		[[engine.defender should] receive:@selector(receiveDamage:) withCount:2];
 
 		[engine tick:0.1];

@@ -1,5 +1,5 @@
 #import "DEMClockEngineProtocol.h"
-#import "DEMBattleProtocol.h"
+#import "DEMAttackerProtocol.h"
 
 @interface DEMBattleEngine : NSObject
 <
@@ -9,7 +9,7 @@ DEMClockEngineProtocol
 @property (nonatomic, assign, readonly) NSUInteger attackersCount;
 
 - (instancetype)initWithDefender:(id<DEMBattleProtocol>)defender;
-- (void)addAttacker:(id<DEMBattleProtocol>)attacker;
-- (void)removeAttacker:(id<DEMBattleProtocol>)attacker;
+- (void)battleWillStartForAttacker:(id<DEMAttackerProtocol>)attacker;
+- (void)battleDidEndForAttacker:(id<DEMAttackerProtocol>)attacker;
 
 @end

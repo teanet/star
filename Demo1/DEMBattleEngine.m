@@ -1,6 +1,9 @@
 #import "DEMBattleEngine.h"
 
 @interface DEMBattleEngine ()
+<
+DEMBattleAction
+>
 
 @property (nonatomic, strong, readonly) id<DEMBattleProtocol> defender;
 @property (nonatomic, strong, readonly) NSMutableArray<id<DEMBattleProtocol>> *attackers;
@@ -22,22 +25,21 @@
 	return self;
 }
 
-- (NSUInteger)attackersCount
-{
+- (NSUInteger)attackersCount {
 	return _attackers.count;
 }
 
-- (void)addAttacker:(id<DEMBattleProtocol>)attacker
-{
+- (void)battleWillStartForAttacker:(id<DEMAttackerProtocol>)attacker {
 	dispatch_semaphore_wait(_semaphore, DISPATCH_TIME_FOREVER);
 	[_attackers addObject:attacker];
 	NSLog(@"Add attacker: %@\nattackers: %@", attacker, _attackers);
 	dispatch_semaphore_signal(_semaphore);
 }
 
-- (void)removeAttacker:(id<DEMBattleProtocol>)attacker
-{
+- (void)battleDidEndForAttacker:(id<DEMAttackerProtocol>)attacker {
 	dispatch_semaphore_wait(_semaphore, DISPATCH_TIME_FOREVER);
+	//	[attacker finshBattle];
+	[attacker finishBattle];
 	[_attackers removeObject:attacker];
 	NSLog(@"Remove attacker: %@\nattackers: %@", attacker, _attackers);
 	dispatch_semaphore_signal(_semaphore);
@@ -45,8 +47,7 @@
 
 #pragma mark DEMClockEngineProtocol
 
-- (void)tick:(NSTimeInterval)duration
-{
+- (void)tick:(NSTimeInterval)duration {
 	dispatch_semaphore_wait(_semaphore, DISPATCH_TIME_FOREVER);
 
 	[_attackers enumerateObjectsUsingBlock:^(id<DEMBattleProtocol> attacker, NSUInteger _, BOOL *stop) {
@@ -55,5 +56,21 @@
 
 	dispatch_semaphore_signal(_semaphore);
 }
+
+#pragma mark DEMBattleAction
+
+- (void)didDie:(id<DEMBattleProtocol>)unit {
+//	if ([unit isEqual:_defender])
+//	{
+//		[_attackers enumerateObjectsUsingBlock:^(id<DEMBattleProtocol>  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+//			[obj setState:FAILED];
+//		}];
+//	}
+//	else
+//	{
+//		[unit setState:FAILED];
+//	}
+}
+
 
 @end

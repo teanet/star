@@ -7,11 +7,16 @@ KW_SPEC="DGSRootVCSpec"
 
 DESTINATION="platform=iOS Simulator,name=iPhone 6"
 
-XCODEBUILD_FLAGS=(-destination "${DESTINATION}" -workspace "${WORKSPACE}" -scheme "${SCHEME}" -enableCodeCoverage YES )
+XCODEBUILD_FLAGS=( -destination "${DESTINATION}" -workspace "${WORKSPACE}" -scheme "${SCHEME}" )
 
 echo "*** Running tests on $DESTINATION"
 xcodebuild test \
     "${XCODEBUILD_FLAGS[@]}" \
     2>&1 | xcpretty -ct
+STATUS=${PIPESTATUS[0]}
+
+if [[ ${STATUS} -ne 0 ]]; then
+  exit 1
+fi
 
 cd "${CURRENT_DIR}"

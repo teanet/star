@@ -1,8 +1,9 @@
 #import "DEMWave.h"
 
 const NSTimeInterval kDEMMinimumDurationTime = 1.0;
-const NSTimeInterval kDEMMinimumScheduleTime = 300.0;
+const NSTimeInterval kDEMMinimumScheduleTime = 10.0;
 const NSTimeInterval kDEMDefaultDPS = 1.0;
+const double kDPSIncreaseFactor = 1.1;
 
 #define CHECK_ACTIVE_STATE() {if (!self.isActive) return;}
 
@@ -10,21 +11,26 @@ const NSTimeInterval kDEMDefaultDPS = 1.0;
 
 @property (nonatomic, assign) NSTimeInterval currentTime;
 @property (nonatomic, assign) float progress;
+@property (nonatomic, assign) BOOL passed;
 
 @end
 
 @implementation DEMWave
 
 @synthesize state=_privateState;
+@synthesize dps = _dps;
+@synthesize delegate = _delegate;
 
 - (instancetype)init {
 	self = [super init];
 	if (self == nil) return nil;
+	// TODO: change to running time
 	_duration = kDEMMinimumDurationTime;
 	_scheduleTime = kDEMMinimumScheduleTime;
 	_currentTime = 0.0;
 	_privateState = DEMWaveStateDead;
-
+	_dps = kDEMDefaultDPS;
+	_passed = YES;
 	return self;
 }
 
@@ -48,8 +54,14 @@ const NSTimeInterval kDEMDefaultDPS = 1.0;
 	return DEMWaveStateRun == (_privateState & DEMWaveStateRun);
 }
 
-- (void)pass{
+- (void)pass {
+	NSLog(@"Увеличен уровень волны >>%@", self);
+	_level++;
+	_dps = kDEMDefaultDPS * pow(kDPSIncreaseFactor, _level);
+}
 
+- (NSString *)description {
+	return [NSString stringWithFormat:@"Волна, уровень: %d, dps: %f", _level, _dps];
 }
 
 - (void)fail {
@@ -69,14 +81,20 @@ const NSTimeInterval kDEMDefaultDPS = 1.0;
 	return fmod(_currentTime, [self totalWaveDuration]);
 }
 
-#pragma mark DEMBattleProtocol
+#pragma mark DEMAttackerProtocol
 
-- (double)dps {
-	return kDEMDefaultDPS;
+- (void)markAsPassed:(BOOL)passed {
+	_passed = passed;
 }
 
 - (void)receiveDamage:(double)damage {
 	
+}
+
+- (void)finishBattle {
+	if (_passed) {
+		[self pass];
+	}
 }
 
 #pragma mark DEMClockEngineProtocol
@@ -86,7 +104,7 @@ const NSTimeInterval kDEMDefaultDPS = 1.0;
 
 	_currentTime += duration;
 
-	[self setRunning:_currentTime >= _scheduleTime];
+	[self setRunning:self.currentTime >= _scheduleTime];
 	[self updateProgress];
 }
 

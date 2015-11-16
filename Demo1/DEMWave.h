@@ -1,4 +1,4 @@
-#import "DEMBattleProtocol.h"
+#import "DEMAttackerProtocol.h"
 #import "DEMClockEngineProtocol.h"
 #import "DEMProgressProtocol.h"
 
@@ -15,7 +15,7 @@ typedef NS_OPTIONS(NSUInteger, DEMWaveState) {
 
 @interface DEMWave : NSObject
 <
-DEMBattleProtocol,
+DEMAttackerProtocol,
 DEMClockEngineProtocol,
 DEMProgressProtocol
 >
@@ -35,7 +35,7 @@ DEMProgressProtocol
 - (BOOL)isActive;
 - (BOOL)isRunning;
 
-- (void)pass;
-- (void)fail;
+//- (void)pass;
+//- (void)fail;
 
 @end

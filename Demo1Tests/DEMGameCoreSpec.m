@@ -115,14 +115,14 @@ describe(@"DEMGameCore", ^{
 		it(@"Should add wave to battle engine when waveState changes to run", ^{
 			[wave stub:@selector(isRunning) andReturn:theValue(YES)];
 
-			[[core.battleEngine should] receive:@selector(addAttacker:) withArguments:wave, nil];
+			[[core.battleEngine should] receive:@selector(battleWillStartForAttacker:) withArguments:wave, nil];
 			[core waveEngine:nil didChangeStateForWave:wave];
 		});
 
 		it(@"Should remove wave from battle engine when waveState chenges to shedule", ^{
 			[wave stub:@selector(isRunning) andReturn:theValue(NO)];
 
-			[[core.battleEngine should] receive:@selector(removeAttacker:) withArguments:wave, nil];
+			[[core.battleEngine should] receive:@selector(battleDidEndForAttacker:) withArguments:wave, nil];
 			[core waveEngine:nil didChangeStateForWave:wave];
 		});
 

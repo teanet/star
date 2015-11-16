@@ -1,0 +1,88 @@
+#!/bin/bash
+
+CURRENT_DIR="$(pwd)"
+ROOT_PATH=$(pwd)
+APP_NAME="Demo1"
+WORKSPACE="${APP_NAME}.xcworkspace"
+SCHEME="${APP_NAME}"
+PROVISIONING_PROFILE="${ROOT_PATH}/profile.mobileprovision"
+CODE_SIGN_IDENTITY="iPhone Distribution: Accelior s.a. (GQNXDP4F95)"
+CONFIG="Release"
+DESTINATION="platform=iOS Simulator,name=iPhone 6"
+BUILD_PATH="${ROOT_PATH}/build"
+IPA_PATH="${BUILD_PATH}/${APP_NAME}.ipa"
+ARCHIVE_PATH="${BUILD_PATH}/${APP_NAME}.xcarchive"
+INFOPLIST_FILE="${ROOT_PATH}/${APP_NAME}/Info.plist"
+XCODEBUILD_FLAGS=( -destination "${DESTINATION}" -workspace "${WORKSPACE}" -scheme "${SCHEME}" )
+VERSION=""
+
+UpdateMobileprovisionProfile(){
+  UUID=$(/usr/libexec/PlistBuddy -c 'Print UUID' /dev/stdin <<< $(security cms -D -i "${PROVISIONING_PROFILE}"))	
+  OUTPUT=$(cd ~/Library/MobileDevice/"Provisioning Profiles"; pwd)/${UUID}.mobileprovision
+  cp "${PROVISIONING_PROFILE}" "${OUTPUT}"	
+}
+
+
+while [ "$1" != "" ]; do
+    case $1 in
+        --version )	            shift
+                                VERSION="$1"
+                                ;;
+        -i | --identity)        shift
+                                CODE_SIGN_IDENTITY="$1"
+                                ;;
+        -p | --profile)         shift
+                                PROVISIONING_PROFILE="$1"
+                                ;;
+        -d | --destination) 	shift
+								DESTINATION="id=$1"								
+                                ;;
+        -h | --help )           Usage
+                                exit
+                                ;;
+        * )                     Usage
+                                exit 1
+    esac
+    shift
+done
+
+rm -fr "${BUILD_PATH}"
+
+./run_tests
+STATUS=$?
+if [[ "${STATUS}" -ne 0 ]]; then
+	exit 1
+fi
+
+if [[ -n "${VERSION}" ]]; then
+	echo "update version to ${VERSION}"
+	/usr/libexec/PlistBuddy -c "Set :CFBundleShortVersionString ${VERSION}" "${INFOPLIST_FILE}"
+fi
+
+exit
+
+# buildNumber=$(/usr/libexec/PlistBuddy -c "Print CFBundleVersion" "$INFOPLIST_FILE")
+
+
+echo "create archive"
+xcodebuild archive \
+    -scheme "$SCHEME" \
+    -configuration "$CONFIG" \
+    -workspace "$WORKSPACE" \
+    PROVISIONING_PROFILE="${PROVISIONING_PROFILE}"\
+    CODE_SIGN_IDENTITY="${CODE_SIGN_IDENTITY}"\
+    -archivePath "${ARCHIVE_PATH}" | xcpretty -cs
+
+echo "create ipa"
+xcodebuild -exportArchive -exportFormat ipa \
+    -archivePath "${ARCHIVE_PATH}" \
+    -exportPath "${IPA_PATH}" | xcpretty -cs
+
+echo "send build to crashlytics"
+./Pods/Crashlytics/Crashlytics.framework/submit 8142f2c372c2a7302bfe37e6270531929cd31c43 e19d183b64f8207acfb6446f74703fc23bb26512f83f032a8f9aba3a8a148480 \
+-ipaPath "${IPA_PATH}" \
+-groupAliases monniz \
+-notifications YES
+# -notesPath ~/Notes/ReleaseNotes.txt \
+echo "clean up"
+rm -fr "$BUILD_PATH"
