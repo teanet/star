@@ -1,7 +1,7 @@
 #import "DEMWave.h"
 
 const NSTimeInterval kDEMMinimumDurationTime = 1.0;
-const NSTimeInterval kDEMMinimumScheduleTime = 10.0;
+const NSTimeInterval kDEMMinimumScheduleTime = 2.0;
 const NSTimeInterval kDEMDefaultDPS = 1.0;
 const double kDPSIncreaseFactor = 1.1;
 
@@ -19,7 +19,7 @@ const double kDPSIncreaseFactor = 1.1;
 
 @synthesize state=_privateState;
 @synthesize dps = _dps;
-@synthesize delegate = _delegate;
+@synthesize battleActionSignal = _battleActionSignal;
 
 - (instancetype)init {
 	self = [super init];
@@ -55,17 +55,19 @@ const double kDPSIncreaseFactor = 1.1;
 }
 
 - (void)pass {
-	NSLog(@"Увеличен уровень волны >>%@", self);
 	_level++;
 	_dps = kDEMDefaultDPS * pow(kDPSIncreaseFactor, _level);
-}
-
-- (NSString *)description {
-	return [NSString stringWithFormat:@"Волна, уровень: %d, dps: %f", _level, _dps];
+	NSLog(@"Увеличен уровень волны >>%@", self);
 }
 
 - (void)fail {
+	_level--;
+	_dps = kDEMDefaultDPS * pow(kDPSIncreaseFactor, _level);
+	NSLog(@"Уменьшен уровень волны >>%@", self);
+}
 
+- (NSString *)description {
+	return [NSString stringWithFormat:@"Wave, level: %d, dps: %f", _level, _dps];
 }
 
 - (void)updateProgress {
@@ -83,6 +85,10 @@ const double kDPSIncreaseFactor = 1.1;
 
 #pragma mark DEMAttackerProtocol
 
+- (BOOL)canBeWeaker {
+	return self.level > 0;
+}
+
 - (void)markAsPassed:(BOOL)passed {
 	_passed = passed;
 }
@@ -92,9 +98,16 @@ const double kDPSIncreaseFactor = 1.1;
 }
 
 - (void)finishBattle {
+
 	if (_passed) {
 		[self pass];
 	}
+	else {
+		[self fail];
+	}
+
+	_passed = YES;
+
 }
 
 #pragma mark DEMClockEngineProtocol

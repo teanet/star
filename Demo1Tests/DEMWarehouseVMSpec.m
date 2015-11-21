@@ -6,8 +6,13 @@ SPEC_BEGIN(DEMWarehouseVMSpec)
 
 describe(@"DEMWarehouseVM", ^{
 
-	let(warehouse, ^DEMWarehouseVM *{
-		return [[DEMWarehouseVM alloc] init];
+
+	__block NSObject<DEMWarehouseItem> *item = nil;
+	__block DEMWarehouseVM *warehouse = nil;
+
+	beforeEach(^{
+		warehouse = [[DEMWarehouseVM alloc] init];
+		item = KWNullMockProtocol(DEMWarehouseItem);
 	});
 
 	it(@"should init with initial capacity", ^{
@@ -18,7 +23,6 @@ describe(@"DEMWarehouseVM", ^{
 
 	it(@"should add intem", ^{
 
-		NSObject<DEMWarehouseItem> *item = [KWMock nullMockForProtocol:@protocol(DEMWarehouseItem)];
 		[warehouse storeItem:item];
 
 		[[warehouse.items should] haveCountOf:1];
@@ -34,6 +38,14 @@ describe(@"DEMWarehouseVM", ^{
 	it(@"should have 0 energy at start", ^{
 
 		[[theValue([warehouse hasEnegry:-1]) should] beYes];
+
+	});
+
+	it(@"should exceed capacity", ^{
+
+		[warehouse stub:@selector(capacity) andReturn:theValue(0)];
+		[warehouse storeItem:item];
+		[[warehouse.items should] haveCountOf:0];
 
 	});
 

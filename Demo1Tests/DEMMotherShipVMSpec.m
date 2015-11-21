@@ -54,12 +54,12 @@ describe(@"DEMMotherShipVM", ^{
 
 		});
 
-		it(@"should send energy state signal with EMPTY", ^{
+		it(@"should send battleActionSignal with DIE", ^{
 
-			NSNumber *_state = [mothership.energyStateSignal dgs_subscribeNextSyncWithActionBlock:^{
+			NSNumber *_state = [mothership.battleActionSignal dgs_lastObjectAfterAction:^{
 				mothership.currentEnergyLevel = -1.0;
 			}];
-			[[_state should] equal:@(DEMMotherShipEnegyStateEmpty)];
+			[[_state should] equal:@(DEMBattleActionDie)];
 
 		});
 

@@ -12,15 +12,22 @@
 {
 	self = [super init];
 	if (self) {
-		_gameCore = [[DEMGameCore alloc] init];
-		_storeVM = [[DEMStoreVM alloc] initWithMotherShipVM:_gameCore.motherShip];
+		DEMMotherShipVM *motherShip = [[DEMMotherShipVM alloc] init];
+		DEMBattleEngine *battleEngine = [[DEMBattleEngine alloc] init];
+		DEMWaveEngine *waveEngine = [[DEMWaveEngine alloc] init];
+
+		_gameCore = [[DEMGameCore alloc] initWithMotherShip:motherShip
+											   battleEngine:battleEngine
+												 waveEngine:waveEngine];
+		
+		_storeVM = [[DEMStoreVM alloc] initWithMotherShipVM:motherShip];
 	}
 	return self;
 }
 
 - (DEMMotherShipVM *)motherShipVM
 {
-	return _gameCore.motherShip;
+	return self.gameCore.motherShip;
 }
 
 //- (DEMStoreVM *)storeVM

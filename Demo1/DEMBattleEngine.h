@@ -6,10 +6,13 @@
 DEMClockEngineProtocol
 >
 
+@property (nonatomic, strong, readonly) RACSignal *defenderDidFinallyCrashSignal;
 @property (nonatomic, assign, readonly) NSUInteger attackersCount;
 
-- (instancetype)initWithDefender:(id<DEMBattleProtocol>)defender;
+- (instancetype)init NS_DESIGNATED_INITIALIZER;
+
 - (void)battleWillStartForAttacker:(id<DEMAttackerProtocol>)attacker;
 - (void)battleDidEndForAttacker:(id<DEMAttackerProtocol>)attacker;
+- (void)setDefender:(id<DEMBattleProtocol>)defender;
 
 @end

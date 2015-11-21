@@ -2,6 +2,7 @@
 
 @protocol DEMAttackerProtocol <DEMBattleProtocol>
 
+- (BOOL)canBeWeaker;
 - (void)markAsPassed:(BOOL)passed;
 - (void)finishBattle;
 

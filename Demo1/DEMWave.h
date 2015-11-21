@@ -35,7 +35,4 @@ DEMProgressProtocol
 - (BOOL)isActive;
 - (BOOL)isRunning;
 
-//- (void)pass;
-//- (void)fail;
-
 @end

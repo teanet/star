@@ -7,6 +7,7 @@
 @property (nonatomic, assign) BOOL passed;
 
 - (void)setRunning:(BOOL)running;
+- (void)pass;
 
 @end
 
@@ -14,8 +15,12 @@ SPEC_BEGIN(DEMWaveSpec)
 
 describe(@"DEMWave", ^{
 
-	let(wave, ^DEMWave *{
-		return [[DEMWave alloc] init];
+	__block DEMWave *wave = nil;
+
+	beforeEach(^{
+
+		wave = [[DEMWave alloc] init];
+
 	});
 
 	it(@"Should create", ^{
@@ -28,6 +33,7 @@ describe(@"DEMWave", ^{
 		[[theValue(wave.progress) should] equal:0.0f withDelta:FLT_EPSILON];
 		[[theValue(wave.dps) should] equal:kDEMDefaultDPS withDelta:FLT_EPSILON];
 		[[theValue(wave.passed) should] beYes];
+		[[theValue(wave.canBeWeaker) should] beNo];
 
 	});
 
@@ -103,6 +109,15 @@ describe(@"DEMWave", ^{
 
 	});
 
+	it(@"should become active when finish battle", ^{
+
+		[wave markAsPassed:NO];
+		[wave finishBattle];
+
+		[[theValue(wave.passed) should] beYes];
+
+	});
+
 	context(@"pass", ^{
 
 		it(@"should mark as passed", ^{
@@ -132,6 +147,50 @@ describe(@"DEMWave", ^{
 
 	});
 
+	context(@"level 1", ^{
+
+		beforeEach(^{
+
+			[wave pass];
+
+		});
+
+		it(@"can be weaker", ^{
+
+			[[theValue(wave.canBeWeaker) should] beYes];
+
+		});
+
+		context(@"fail", ^{
+
+			it(@"should mark as failed", ^{
+
+				[wave markAsPassed:NO];
+				[[theValue(wave.passed) should] beNo];
+
+			});
+
+			it(@"should decrease level", ^{
+
+				uint32_t _level = wave.level;
+				[wave markAsPassed:NO];
+				[wave finishBattle];
+				[[theValue(wave.level) should] beLessThan:theValue(_level)];
+
+			});
+
+			it(@"should decrease dps", ^{
+
+				double _dps = wave.dps;
+				[wave markAsPassed:NO];
+				[wave finishBattle];
+				[[theValue(wave.dps) should] beLessThan:theValue(_dps)];
+				
+			});
+			
+		});
+
+	});
 
 });
 

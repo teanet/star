@@ -11,6 +11,8 @@
 
 @implementation DEMMotherShipVM
 
+@synthesize battleActionSignal = _energyStateSignal;
+
 - (void)dealloc {
 	[self.energyStateSubject sendCompleted];
 }
@@ -48,7 +50,7 @@
 	}
 	else if (currentEnergyLevel < 0.0) {
 		_currentEnergyLevel = 0.0;
-		[self.energyStateSubject sendNext:@(DEMMotherShipEnegyStateEmpty)];
+		[self.energyStateSubject sendNext:@(DEMBattleActionDie)];
 	}
 	else {
 		_currentEnergyLevel = currentEnergyLevel;

@@ -8,9 +8,8 @@
 DEMClockEngineProtocol
 >
 
-@property (nonatomic, weak, readonly) NSObject<DEMWaveEngineDelegate> *delegate;
+@property (nonatomic, weak, readwrite) NSObject<DEMWaveEngineDelegate> *delegate;
 
-- (instancetype)initWithDelegate:(NSObject<DEMWaveEngineDelegate> *)delegate;
 - (NSInteger)activeWavesCount;
 - (void)addWave:(DEMWave *)wave;
 

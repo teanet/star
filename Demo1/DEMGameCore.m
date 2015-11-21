@@ -1,8 +1,6 @@
 #import "DEMGameCore.h"
 
-#import "DEMBattleEngine.h"
 #import "DEMClockEngine.h"
-#import "DEMWaveEngine.h"
 
 @interface DEMGameCore () <DEMClockEngineProtocol, DEMWaveEngineDelegate>
 
@@ -20,25 +18,32 @@
 @implementation DEMGameCore
 
 - (void)dealloc {
-	[self.didFinishGameSubject sendCompleted];
+	[_didFinishGameSubject sendCompleted];
 }
 
-- (instancetype)init {
+- (instancetype)initWithMotherShip:(DEMMotherShipVM *)motherShip
+					  battleEngine:(DEMBattleEngine *)battleEngine
+						waveEngine:(DEMWaveEngine *)waveEngine
+{
 	self = [super init];
 	if (self == nil) return nil;
+
+	NSCParameterAssert(motherShip);
+	NSCParameterAssert(battleEngine);
+	NSCParameterAssert(waveEngine);
 
 	_didFinishGameSubject = [RACSubject subject];
 	_didFinishGameSignal = _didFinishGameSubject;
 
 	_semaphore = dispatch_semaphore_create(1);
 
-	_motherShip = [[DEMMotherShipVM alloc] init];
-	_waveEngine = [[DEMWaveEngine alloc] initWithDelegate:self];
+	_motherShip = motherShip;
+	_waveEngine = waveEngine;
 
 	_clockEngine = [[DEMClockEngine alloc] init];
 	_clockEngine.delegate = self;
 
-	_battleEngine = [[DEMBattleEngine alloc] initWithDefender:_motherShip];
+	_battleEngine = battleEngine;
 
 	// WaveEngine should be first, переделать на массив!
 	_engines =
@@ -46,7 +51,7 @@
 	   _motherShip,
 	   _waveEngine,
 	   _battleEngine
-	  ] mutableCopy];
+	   ] mutableCopy];
 
 	return self;
 }
@@ -57,8 +62,12 @@
 	if (!self.isRunning) {
 		_running = YES;
 
-		[_waveEngine addWave:[[DEMWave alloc] init]];
-		[_clockEngine start];
+		self.waveEngine.delegate = self;
+		[self.waveEngine addWave:[[DEMWave alloc] init]];
+
+		[self.battleEngine setDefender:self.motherShip];
+
+		[self.clockEngine start];
 
 		[self performInitialSubscribes];
 	};
@@ -69,7 +78,7 @@
 
 - (void)stop {
 	dispatch_semaphore_wait(_semaphore, DISPATCH_TIME_FOREVER);
-	[_clockEngine stop];
+	[self.clockEngine stop];
 	_running = NO;
 	dispatch_semaphore_signal(_semaphore);
 }
@@ -77,12 +86,11 @@
 - (void)performInitialSubscribes {
 	@weakify(self);
 
-	[_motherShip.energyStateSignal subscribeNext:^(NSNumber *state) {
+	[self.battleEngine.defenderDidFinallyCrashSignal subscribeNext:^(id _) {
+		
 		@strongify(self);
 
-		if (DEMMotherShipEnegyStateEmpty == (DEMMotherShipEnegyState)state.unsignedIntegerValue) {
-			[self gameDidLose];
-		}
+		[self gameDidLose];
 
 	}];
 }
@@ -95,7 +103,7 @@
 #pragma mark DEMClockEngineDelegate
 
 - (void)tick:(NSTimeInterval)duration {
-	[_engines enumerateObjectsUsingBlock:^(id<DEMClockEngineProtocol>engine, NSUInteger _, BOOL *stop) {
+	[self.engines enumerateObjectsUsingBlock:^(id<DEMClockEngineProtocol>engine, NSUInteger _, BOOL *stop) {
 		[engine tick:duration];
 	}];
 }
@@ -107,13 +115,11 @@
 
 	if (!wave.isActive) return;
 
-	if (wave.isRunning)
-	{
-		[_battleEngine battleWillStartForAttacker:wave];
+	if (wave.isRunning) {
+		[self.battleEngine battleWillStartForAttacker:wave];
 	}
-	else
-	{
-		[_battleEngine battleDidEndForAttacker:wave];
+	else {
+		[self.battleEngine battleDidEndForAttacker:wave];
 	}
 }
 

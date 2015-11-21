@@ -30,7 +30,7 @@
 }
 
 - (void)storeItem:(NSObject<DEMWarehouseItem> *)item {
-	if (_items.count < _capacity) {
+	if (self.items.count < self.capacity) {
 		NSLog(@"%@ has been stored", item.name);
 		[_items addObject:item];
 	}
@@ -41,7 +41,7 @@
 
 - (BOOL)hasEnegry:(double)enegry {
 	__block double currentEnergy = 0.0;
-	[_items enumerateObjectsUsingBlock:^(NSObject<DEMWarehouseItem> *obj, BOOL *stop) {
+	[self.items enumerateObjectsUsingBlock:^(NSObject<DEMWarehouseItem> *obj, BOOL *stop) {
 		currentEnergy += obj.capacity;
 	}];
 	return currentEnergy > enegry;

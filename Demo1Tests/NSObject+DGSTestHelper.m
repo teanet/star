@@ -2,7 +2,7 @@
 
 @implementation RACSignal (DGSTestHelper)
 
-- (id)dgs_subscribeNextSyncWithActionBlock:(dispatch_block_t)block
+- (id)dgs_lastObjectAfterAction:(dispatch_block_t)block
 {
 	__block id _x;
 	[self subscribeNext:^(id x) {

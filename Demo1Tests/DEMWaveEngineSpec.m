@@ -11,62 +11,65 @@ SPEC_BEGIN(DEMWaveEngineSpec)
 
 describe(@"DEMWaveEngine", ^{
 
-	__block NSObject<DEMWaveEngineDelegate> *_delegate;
-	__block DEMWave *_wave;
+	__block NSObject<DEMWaveEngineDelegate> *delegate;
+	__block DEMWave *wave;
 
 	let(waveEngine, ^DEMWaveEngine *{
-		_delegate = [KWMock mockForProtocol:@protocol(DEMWaveEngineDelegate)];
-		[_delegate stub:@selector(waveEngine:didChangeStateForWave:)];
+		delegate = [KWMock mockForProtocol:@protocol(DEMWaveEngineDelegate)];
+		[delegate stub:@selector(waveEngine:didChangeStateForWave:)];
 
-		_wave = [KWMock nullMockForClass:[DEMWave class]];
-		[_wave stub:@selector(activate:)];
-		return [[DEMWaveEngine alloc] initWithDelegate:_delegate];
+		wave = [KWMock nullMockForClass:[DEMWave class]];
+		[wave stub:@selector(activate:)];
+		return [[DEMWaveEngine alloc] init];
 	});
 
 	it(@"Should create", ^{
 		[[waveEngine shouldNot] beNil];
-		[[waveEngine.delegate shouldNot] beNil];
+		[[waveEngine.delegate should] beNil];
 		[[waveEngine.waves shouldNot] beNil];
 		[[waveEngine.waves should] haveCountOf:0];
 	});
 
 	it(@"should add wave", ^{
 
-		[waveEngine addWave:_wave];
+		[waveEngine addWave:wave];
 		[[waveEngine.waves should] haveCountOf:1];
+		[[theValue(waveEngine.activeWavesCount) should] equal:theValue(1)];
 		
 	});
 
 	it(@"waves should receive tick", ^{
 
-		[waveEngine addWave:_wave];
+		[waveEngine addWave:wave];
 		const NSTimeInterval duration = 123.0;
 
-		[[_wave should] receive:@selector(tick:) withArguments:theValue(duration), nil];
+		[[wave should] receive:@selector(tick:) withArguments:theValue(duration), nil];
 		[waveEngine tick:duration];
 	});
 
 	it(@"should call delegate with wave state when add new wave", ^{
 
-		[[_delegate should] receive:@selector(waveEngine:didChangeStateForWave:)
-					  withArguments:waveEngine, _wave, nil];
+		waveEngine.delegate = delegate;
+		[[delegate should] receive:@selector(waveEngine:didChangeStateForWave:)
+					  withArguments:waveEngine, wave, nil];
 
-		[waveEngine addWave:_wave];
+		[waveEngine addWave:wave];
 
 	});
 
 	it(@"should change wave state to active when wave has been added", ^{
 
-		[[_wave should] receive:@selector(activate:) withArguments:theValue(YES), nil];
-		[waveEngine addWave:_wave];
+		[[wave should] receive:@selector(activate:) withArguments:theValue(YES), nil];
+		[waveEngine addWave:wave];
 
 	});
 
 	it(@"Should call delegate when wave changes state", ^{
-		[_wave stub:@selector(state) andReturn:theValue(DEMWaveStateDead) times:@1 afterThatReturn:theValue(DEMWaveStateRun)];
-		[waveEngine addWave:_wave];
+		waveEngine.delegate = delegate;
+		[wave stub:@selector(state) andReturn:theValue(DEMWaveStateDead) times:@1 afterThatReturn:theValue(DEMWaveStateRun)];
+		[waveEngine addWave:wave];
 
-		[[_delegate should] receive:@selector(waveEngine:didChangeStateForWave:) withArguments:waveEngine, _wave, nil];
+		[[delegate should] receive:@selector(waveEngine:didChangeStateForWave:) withArguments:waveEngine, wave, nil];
 		[waveEngine tick:0.0];
 	});
 
