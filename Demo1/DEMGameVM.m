@@ -1,5 +1,8 @@
 #import "DEMGameVM.h"
 
+#import "DEMStoreStuffBuy.h"
+#import "DEMStoreStuffUpgrade.h"
+
 @interface DEMGameVM ()
 
 @property (nonatomic, strong) DEMGameCore *gameCore;
@@ -19,20 +22,17 @@
 		_gameCore = [[DEMGameCore alloc] initWithMotherShip:motherShip
 											   battleEngine:battleEngine
 												 waveEngine:waveEngine];
-		
-		_storeVM = [[DEMStoreVM alloc] initWithMotherShipVM:motherShip];
+
+		DEMStoreStuffBuy *shop = [[DEMStoreStuffBuy alloc] initWithVisitor:motherShip];
+		DEMStoreStuffUpgrade *workshop = [[DEMStoreStuffUpgrade alloc] initWithVisitor:motherShip];
+
+		_storeVM = [[DEMStoreVM alloc] initWithVisitor:motherShip places:@[shop, workshop]];
 	}
 	return self;
 }
 
-- (DEMMotherShipVM *)motherShipVM
-{
+- (DEMMotherShipVM *)motherShipVM {
 	return self.gameCore.motherShip;
 }
-
-//- (DEMStoreVM *)storeVM
-//{
-//	return _gameCore;
-//}
 
 @end

@@ -1,11 +1,3 @@
-//
-//  DEMStoreVC.m
-//  Demo1
-//
-//  Created by tea on 01/11/15.
-//  Copyright © 2015 demo. All rights reserved.
-//
-
 #import "DEMStoreVC.h"
 #import "DEMStoreVM.h"
 #import "DEMStoreItemCell.h"
@@ -24,14 +16,30 @@
 {
 	self = [super init];
 	if (self == nil) return nil;
+
 	_storeVM = storeVM;
+
 	return self;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+	UISegmentedControl *sc = [[UISegmentedControl alloc] initWithItems:self.storeVM.placeTitles];
+	[sc addTarget:self action:@selector(switch:) forControlEvents:UIControlEventValueChanged];
+	sc.selectedSegmentIndex = self.storeVM.selectedPlaceIndex;
+	self.navigationItem.titleView = sc;
+
 	[self.tableView registerClass:[DEMStoreItemCell class] forCellReuseIdentifier:@"DEMStoreItemCell"];
+
+	[self.storeVM.didFailProcessSignal subscribeNext:^(NSError *error) {
+		[[[UIAlertView alloc] initWithTitle:@"Not enogh founds" message:error.localizedDescription delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil] show];
+	}];
+}
+
+- (void)switch:(UISegmentedControl *)sc {
+	[self.storeVM selectPlaceWithIndex:sc.selectedSegmentIndex];
+	[self.tableView reloadData];
 }
 
 #pragma mark - Table view data source
@@ -46,7 +54,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     DEMStoreItemCell *cell = [tableView dequeueReusableCellWithIdentifier:@"DEMStoreItemCell"];
-	NSObject<DEMStoreItem> *item = self.storeVM.items[indexPath.row];
+	NSObject<DEMStuffProtocol> *item = self.storeVM.items[indexPath.row];
 	cell.item = item;
     return cell;
 }
@@ -54,13 +62,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
 	[tableView deselectRowAtIndexPath:indexPath animated:YES];
 
-	NSObject<DEMStoreItem> *item = self.storeVM.items[indexPath.row];
-	if ([self.storeVM canPurchaseItem:item]) {
-		[self.storeVM installItem:item];
-	}
-	else {
-		[[[UIAlertView alloc] initWithTitle:@"Not enogh founds" message:nil delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil] show];
-	}
+	[self.storeVM processItemAtIndex:indexPath.row];
 }
 
 @end

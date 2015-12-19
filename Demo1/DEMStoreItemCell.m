@@ -15,10 +15,11 @@
 	return self;
 }
 
-- (void)setItem:(NSObject<DEMStoreItem> *)item {
+- (void)setItem:(NSObject<DEMStuffProtocol> *)item {
 	_item = item;
 	self.textLabel.text = item.name;
-	self.detailTextLabel.text = [NSString stringWithFormat:@"%.0f", item.price];
+#warning self.detailTextLabel.text
+//	self.detailTextLabel.text = [NSString stringWithFormat:@"%.0f", item.price];
 }
 
 @end

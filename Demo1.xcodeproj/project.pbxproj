@@ -7,6 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		303518AB1C1D96B700078788 /* DEMBaseItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 303518AA1C1D96B700078788 /* DEMBaseItem.m */; };
+		303518AC1C1D96B700078788 /* DEMBaseItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 303518AA1C1D96B700078788 /* DEMBaseItem.m */; };
+		303518AF1C1D9FE300078788 /* DEMCharacteristic.m in Sources */ = {isa = PBXBuildFile; fileRef = 303518AE1C1D9FE300078788 /* DEMCharacteristic.m */; };
+		303518B01C1D9FE300078788 /* DEMCharacteristic.m in Sources */ = {isa = PBXBuildFile; fileRef = 303518AE1C1D9FE300078788 /* DEMCharacteristic.m */; };
+		303518B31C1DA1C500078788 /* DEMCharacteristicEps.m in Sources */ = {isa = PBXBuildFile; fileRef = 303518B21C1DA1C500078788 /* DEMCharacteristicEps.m */; };
+		303518B41C1DA1C500078788 /* DEMCharacteristicEps.m in Sources */ = {isa = PBXBuildFile; fileRef = 303518B21C1DA1C500078788 /* DEMCharacteristicEps.m */; };
+		303518B71C1DA22900078788 /* DEMCharacteristicTypes.m in Sources */ = {isa = PBXBuildFile; fileRef = 303518B61C1DA22900078788 /* DEMCharacteristicTypes.m */; };
+		303518B81C1DA22900078788 /* DEMCharacteristicTypes.m in Sources */ = {isa = PBXBuildFile; fileRef = 303518B61C1DA22900078788 /* DEMCharacteristicTypes.m */; };
+		303518BC1C1DAEA800078788 /* DEMUUID.m in Sources */ = {isa = PBXBuildFile; fileRef = 303518BB1C1DAEA800078788 /* DEMUUID.m */; };
+		303518BD1C1DAEA800078788 /* DEMUUID.m in Sources */ = {isa = PBXBuildFile; fileRef = 303518BB1C1DAEA800078788 /* DEMUUID.m */; };
+		30BD064F1C2589DC000E6A24 /* DEMStoreVCSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 30BD064E1C2589DC000E6A24 /* DEMStoreVCSpec.m */; };
+		30BD06531C259B14000E6A24 /* DEMResources.m in Sources */ = {isa = PBXBuildFile; fileRef = 30BD06521C259B14000E6A24 /* DEMResources.m */; };
+		30BD06541C259B14000E6A24 /* DEMResources.m in Sources */ = {isa = PBXBuildFile; fileRef = 30BD06521C259B14000E6A24 /* DEMResources.m */; };
 		930F70D61BE652FD00F18626 /* DEMStoreVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 930F70D51BE652FD00F18626 /* DEMStoreVC.m */; };
 		930F70D91BE6535900F18626 /* DEMStoreVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 930F70D81BE6535900F18626 /* DEMStoreVM.m */; };
 		930F70DE1BE6557A00F18626 /* DEMGravizzappa.m in Sources */ = {isa = PBXBuildFile; fileRef = 930F70DD1BE6557A00F18626 /* DEMGravizzappa.m */; };
@@ -27,7 +40,15 @@
 		933368ED1BF38EE700600935 /* DEMBattleEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 933368EC1BF38EE700600935 /* DEMBattleEngine.m */; };
 		933368EE1BF38EE700600935 /* DEMBattleEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 933368EC1BF38EE700600935 /* DEMBattleEngine.m */; };
 		933368F11BF3909500600935 /* DEMBattleEngineSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 933368EF1BF3909500600935 /* DEMBattleEngineSpec.m */; };
+		93616AAC1C01F67F00F88CB3 /* DEMStoreStuffBuy.m in Sources */ = {isa = PBXBuildFile; fileRef = 93946CD01C01E6900085D087 /* DEMStoreStuffBuy.m */; };
 		936178451BF772A300A3BB3E /* NSObject+DGSTestHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 936178441BF772A300A3BB3E /* NSObject+DGSTestHelper.m */; };
+		938906251C146D29004B1309 /* DEMVisitorPlace.m in Sources */ = {isa = PBXBuildFile; fileRef = 938906241C146D29004B1309 /* DEMVisitorPlace.m */; };
+		938906261C146D29004B1309 /* DEMVisitorPlace.m in Sources */ = {isa = PBXBuildFile; fileRef = 938906241C146D29004B1309 /* DEMVisitorPlace.m */; };
+		9389062B1C149780004B1309 /* DEMStoreStuffUpgrade.m in Sources */ = {isa = PBXBuildFile; fileRef = 9389062A1C149780004B1309 /* DEMStoreStuffUpgrade.m */; };
+		9389062C1C149780004B1309 /* DEMStoreStuffUpgrade.m in Sources */ = {isa = PBXBuildFile; fileRef = 9389062A1C149780004B1309 /* DEMStoreStuffUpgrade.m */; };
+		9389062E1C1497D6004B1309 /* DEMStoreStuffUpgradeSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 9389062D1C1497D6004B1309 /* DEMStoreStuffUpgradeSpec.m */; };
+		93946CD11C01E6900085D087 /* DEMStoreStuffBuy.m in Sources */ = {isa = PBXBuildFile; fileRef = 93946CD01C01E6900085D087 /* DEMStoreStuffBuy.m */; };
+		93946CD31C01ECDF0085D087 /* DEMStoreStuffBuy.m in Sources */ = {isa = PBXBuildFile; fileRef = 93946CD21C01ECDF0085D087 /* DEMStoreStuffBuy.m */; };
 		93BFF3E91BE646E200EB4B29 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 93BFF3E81BE646E200EB4B29 /* main.m */; };
 		93BFF3EC1BE646E200EB4B29 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 93BFF3EB1BE646E200EB4B29 /* AppDelegate.m */; };
 		93BFF3EF1BE646E200EB4B29 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93BFF3EE1BE646E200EB4B29 /* ViewController.m */; };
@@ -65,13 +86,29 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3021DFB81C25AB1B00FB2B85 /* DEMEntityUpgradableProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DEMEntityUpgradableProtocol.h; sourceTree = "<group>"; };
+		303518A91C1D96B700078788 /* DEMBaseItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEMBaseItem.h; sourceTree = "<group>"; };
+		303518AA1C1D96B700078788 /* DEMBaseItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEMBaseItem.m; sourceTree = "<group>"; };
+		303518AD1C1D9FE300078788 /* DEMCharacteristic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEMCharacteristic.h; sourceTree = "<group>"; };
+		303518AE1C1D9FE300078788 /* DEMCharacteristic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEMCharacteristic.m; sourceTree = "<group>"; };
+		303518B11C1DA1C500078788 /* DEMCharacteristicEps.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEMCharacteristicEps.h; sourceTree = "<group>"; };
+		303518B21C1DA1C500078788 /* DEMCharacteristicEps.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEMCharacteristicEps.m; sourceTree = "<group>"; };
+		303518B51C1DA22900078788 /* DEMCharacteristicTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEMCharacteristicTypes.h; sourceTree = "<group>"; };
+		303518B61C1DA22900078788 /* DEMCharacteristicTypes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEMCharacteristicTypes.m; sourceTree = "<group>"; };
+		303518B91C1DAD9C00078788 /* DEMVisitorProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEMVisitorProtocol.h; sourceTree = "<group>"; };
+		303518BA1C1DAEA800078788 /* DEMUUID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEMUUID.h; sourceTree = "<group>"; };
+		303518BB1C1DAEA800078788 /* DEMUUID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEMUUID.m; sourceTree = "<group>"; };
+		30BD064E1C2589DC000E6A24 /* DEMStoreVCSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEMStoreVCSpec.m; sourceTree = "<group>"; };
+		30BD06501C259AC1000E6A24 /* DEMActionExchangeResourcesProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEMActionExchangeResourcesProtocol.h; sourceTree = "<group>"; };
+		30BD06511C259B14000E6A24 /* DEMResources.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEMResources.h; sourceTree = "<group>"; };
+		30BD06521C259B14000E6A24 /* DEMResources.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEMResources.m; sourceTree = "<group>"; };
 		72F039815E1FD4EA46FFC19A /* Pods_Demo1.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Demo1.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		77D90EAE768F62B9B31204C2 /* Pods-Demo1.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demo1.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Demo1/Pods-Demo1.debug.xcconfig"; sourceTree = "<group>"; };
 		930F70D41BE652FD00F18626 /* DEMStoreVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEMStoreVC.h; sourceTree = "<group>"; };
 		930F70D51BE652FD00F18626 /* DEMStoreVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEMStoreVC.m; sourceTree = "<group>"; };
 		930F70D71BE6535900F18626 /* DEMStoreVM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEMStoreVM.h; sourceTree = "<group>"; };
 		930F70D81BE6535900F18626 /* DEMStoreVM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEMStoreVM.m; sourceTree = "<group>"; };
-		930F70DB1BE653BB00F18626 /* DEMStoreItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEMStoreItem.h; sourceTree = "<group>"; };
+		930F70DB1BE653BB00F18626 /* DEMEntityExchangableProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEMEntityExchangableProtocol.h; sourceTree = "<group>"; };
 		930F70DC1BE6557A00F18626 /* DEMGravizzappa.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEMGravizzappa.h; sourceTree = "<group>"; };
 		930F70DD1BE6557A00F18626 /* DEMGravizzappa.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEMGravizzappa.m; sourceTree = "<group>"; };
 		930F70E01BE6572B00F18626 /* DEMGameVM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEMGameVM.h; sourceTree = "<group>"; };
@@ -91,8 +128,20 @@
 		933368EB1BF38EE700600935 /* DEMBattleEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEMBattleEngine.h; sourceTree = "<group>"; };
 		933368EC1BF38EE700600935 /* DEMBattleEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEMBattleEngine.m; sourceTree = "<group>"; };
 		933368EF1BF3909500600935 /* DEMBattleEngineSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEMBattleEngineSpec.m; sourceTree = "<group>"; };
+		93616AAE1C02234500F88CB3 /* DEMActionUpgradeProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEMActionUpgradeProtocol.h; sourceTree = "<group>"; };
 		936178431BF772A300A3BB3E /* NSObject+DGSTestHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+DGSTestHelper.h"; sourceTree = "<group>"; };
 		936178441BF772A300A3BB3E /* NSObject+DGSTestHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+DGSTestHelper.m"; sourceTree = "<group>"; };
+		9389061F1C1455CD004B1309 /* DEMStuffProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEMStuffProtocol.h; sourceTree = "<group>"; };
+		938906221C145E8F004B1309 /* DEMActionExchangeProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEMActionExchangeProtocol.h; sourceTree = "<group>"; };
+		938906231C146D29004B1309 /* DEMVisitorPlace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEMVisitorPlace.h; sourceTree = "<group>"; };
+		938906241C146D29004B1309 /* DEMVisitorPlace.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEMVisitorPlace.m; sourceTree = "<group>"; };
+		938906271C146E4C004B1309 /* DEMVisitorPlaceProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEMVisitorPlaceProtocol.h; sourceTree = "<group>"; };
+		938906291C149780004B1309 /* DEMStoreStuffUpgrade.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEMStoreStuffUpgrade.h; sourceTree = "<group>"; };
+		9389062A1C149780004B1309 /* DEMStoreStuffUpgrade.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEMStoreStuffUpgrade.m; sourceTree = "<group>"; };
+		9389062D1C1497D6004B1309 /* DEMStoreStuffUpgradeSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEMStoreStuffUpgradeSpec.m; sourceTree = "<group>"; };
+		93946CCF1C01E6900085D087 /* DEMStoreStuffBuy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEMStoreStuffBuy.h; sourceTree = "<group>"; };
+		93946CD01C01E6900085D087 /* DEMStoreStuffBuy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEMStoreStuffBuy.m; sourceTree = "<group>"; };
+		93946CD21C01ECDF0085D087 /* DEMStoreStuffBuy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEMStoreStuffBuy.m; sourceTree = "<group>"; };
 		939907481BFA2A88008BE268 /* DEMAttackerProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEMAttackerProtocol.h; sourceTree = "<group>"; };
 		93BFF3E41BE646E200EB4B29 /* Demo1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Demo1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93BFF3E81BE646E200EB4B29 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -176,11 +225,14 @@
 		930F70DA1BE6535C00F18626 /* Store */ = {
 			isa = PBXGroup;
 			children = (
-				930F70DB1BE653BB00F18626 /* DEMStoreItem.h */,
-				930F70D71BE6535900F18626 /* DEMStoreVM.h */,
-				930F70D81BE6535900F18626 /* DEMStoreVM.m */,
+				938906231C146D29004B1309 /* DEMVisitorPlace.h */,
+				938906241C146D29004B1309 /* DEMVisitorPlace.m */,
 				930F70DC1BE6557A00F18626 /* DEMGravizzappa.h */,
 				930F70DD1BE6557A00F18626 /* DEMGravizzappa.m */,
+				93946CCF1C01E6900085D087 /* DEMStoreStuffBuy.h */,
+				93946CD01C01E6900085D087 /* DEMStoreStuffBuy.m */,
+				938906291C149780004B1309 /* DEMStoreStuffUpgrade.h */,
+				9389062A1C149780004B1309 /* DEMStoreStuffUpgrade.m */,
 			);
 			name = Store;
 			sourceTree = "<group>";
@@ -220,12 +272,53 @@
 		93163B0C1BEFAC60007BDF03 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
+				938906211C145E77004B1309 /* Actions */,
+				938906201C1455EF004B1309 /* Stuff */,
+				939907481BFA2A88008BE268 /* DEMAttackerProtocol.h */,
 				93CB43341BEA3DB300992134 /* DEMBattleProtocol.h */,
 				93CB43401BEA4D5800992134 /* DEMClockEngineProtocol.h */,
 				93163B0D1BEFAC9F007BDF03 /* DEMProgressProtocol.h */,
-				939907481BFA2A88008BE268 /* DEMAttackerProtocol.h */,
+				938906271C146E4C004B1309 /* DEMVisitorPlaceProtocol.h */,
+				303518B91C1DAD9C00078788 /* DEMVisitorProtocol.h */,
 			);
 			name = Protocols;
+			sourceTree = "<group>";
+		};
+		938906201C1455EF004B1309 /* Stuff */ = {
+			isa = PBXGroup;
+			children = (
+				9389061F1C1455CD004B1309 /* DEMStuffProtocol.h */,
+				3021DFB81C25AB1B00FB2B85 /* DEMEntityUpgradableProtocol.h */,
+				930F70DB1BE653BB00F18626 /* DEMEntityExchangableProtocol.h */,
+				303518A91C1D96B700078788 /* DEMBaseItem.h */,
+				303518AA1C1D96B700078788 /* DEMBaseItem.m */,
+				303518AD1C1D9FE300078788 /* DEMCharacteristic.h */,
+				303518AE1C1D9FE300078788 /* DEMCharacteristic.m */,
+				303518B11C1DA1C500078788 /* DEMCharacteristicEps.h */,
+				303518B21C1DA1C500078788 /* DEMCharacteristicEps.m */,
+				303518B51C1DA22900078788 /* DEMCharacteristicTypes.h */,
+				303518B61C1DA22900078788 /* DEMCharacteristicTypes.m */,
+			);
+			name = Stuff;
+			sourceTree = "<group>";
+		};
+		938906211C145E77004B1309 /* Actions */ = {
+			isa = PBXGroup;
+			children = (
+				938906221C145E8F004B1309 /* DEMActionExchangeProtocol.h */,
+				93616AAE1C02234500F88CB3 /* DEMActionUpgradeProtocol.h */,
+				30BD06501C259AC1000E6A24 /* DEMActionExchangeResourcesProtocol.h */,
+			);
+			name = Actions;
+			sourceTree = "<group>";
+		};
+		938906281C14969B004B1309 /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				930F70D71BE6535900F18626 /* DEMStoreVM.h */,
+				930F70D81BE6535900F18626 /* DEMStoreVM.m */,
+			);
+			name = Store;
 			sourceTree = "<group>";
 		};
 		93BFF3DB1BE646E200EB4B29 = {
@@ -251,7 +344,8 @@
 		93BFF3E61BE646E200EB4B29 /* Demo1 */ = {
 			isa = PBXGroup;
 			children = (
-				93BFF4101BE64D2D00EB4B29 /* Model */,
+				930F70F11BE65E2B00F18626 /* Models */,
+				93BFF4101BE64D2D00EB4B29 /* ViewModels */,
 				93BFF3EA1BE646E200EB4B29 /* AppDelegate.h */,
 				93BFF3EB1BE646E200EB4B29 /* AppDelegate.m */,
 				93BFF3ED1BE646E200EB4B29 /* ViewController.h */,
@@ -291,24 +385,27 @@
 				93163B0A1BEF68D3007BDF03 /* DEMWaveEngineSpec.m */,
 				93163B0E1BEFADF6007BDF03 /* DEMGameVMSpec.m */,
 				93D14FFE1BF79D6C0022B710 /* DEMGravizzappaSpec.m */,
+				93946CD21C01ECDF0085D087 /* DEMStoreStuffBuy.m */,
+				9389062D1C1497D6004B1309 /* DEMStoreStuffUpgradeSpec.m */,
+				30BD064E1C2589DC000E6A24 /* DEMStoreVCSpec.m */,
 			);
 			path = Demo1Tests;
 			sourceTree = "<group>";
 		};
-		93BFF4101BE64D2D00EB4B29 /* Model */ = {
+		93BFF4101BE64D2D00EB4B29 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				930F70DA1BE6535C00F18626 /* Store */,
+				938906281C14969B004B1309 /* Store */,
 				930F70E01BE6572B00F18626 /* DEMGameVM.h */,
 				930F70E11BE6572B00F18626 /* DEMGameVM.m */,
-				930F70F11BE65E2B00F18626 /* Models */,
 			);
-			name = Model;
+			name = ViewModels;
 			sourceTree = "<group>";
 		};
 		93CB43331BEA3CFC00992134 /* GameCore */ = {
 			isa = PBXGroup;
 			children = (
+				930F70DA1BE6535C00F18626 /* Store */,
 				93CB434C1BEA5DF400992134 /* Wave */,
 				93163B0C1BEFAC60007BDF03 /* Protocols */,
 				933368EB1BF38EE700600935 /* DEMBattleEngine.h */,
@@ -317,6 +414,10 @@
 				93CB433B1BEA43B100992134 /* DEMClockEngine.m */,
 				93CB43371BEA42D900992134 /* DEMGameCore.h */,
 				93CB43381BEA42D900992134 /* DEMGameCore.m */,
+				303518BA1C1DAEA800078788 /* DEMUUID.h */,
+				303518BB1C1DAEA800078788 /* DEMUUID.m */,
+				30BD06511C259B14000E6A24 /* DEMResources.h */,
+				30BD06521C259B14000E6A24 /* DEMResources.m */,
 			);
 			name = GameCore;
 			sourceTree = "<group>";
@@ -556,20 +657,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93946CD11C01E6900085D087 /* DEMStoreStuffBuy.m in Sources */,
 				93CB43451BEA58FE00992134 /* DEMWaveEngine.m in Sources */,
 				930F70E21BE6572B00F18626 /* DEMGameVM.m in Sources */,
+				303518AF1C1D9FE300078788 /* DEMCharacteristic.m in Sources */,
+				303518AB1C1D96B700078788 /* DEMBaseItem.m in Sources */,
 				93BFF40F1BE64B5B00EB4B29 /* DEMBaseVC.m in Sources */,
+				9389062B1C149780004B1309 /* DEMStoreStuffUpgrade.m in Sources */,
 				93BFF3EF1BE646E200EB4B29 /* ViewController.m in Sources */,
 				93CB43391BEA42D900992134 /* DEMGameCore.m in Sources */,
 				93BFF3EC1BE646E200EB4B29 /* AppDelegate.m in Sources */,
 				930F70EB1BE65D8A00F18626 /* DEMWarehouseVM.m in Sources */,
+				303518B31C1DA1C500078788 /* DEMCharacteristicEps.m in Sources */,
+				938906251C146D29004B1309 /* DEMVisitorPlace.m in Sources */,
 				93CB433C1BEA43B100992134 /* DEMClockEngine.m in Sources */,
 				93BFF3E91BE646E200EB4B29 /* main.m in Sources */,
+				303518B71C1DA22900078788 /* DEMCharacteristicTypes.m in Sources */,
 				933368ED1BF38EE700600935 /* DEMBattleEngine.m in Sources */,
 				930F70E71BE6589200F18626 /* DEMStoreItemCell.m in Sources */,
 				93BFF4131BE64D6100EB4B29 /* DEMMotherShipVM.m in Sources */,
+				303518BC1C1DAEA800078788 /* DEMUUID.m in Sources */,
 				930F70EF1BE65E2100F18626 /* DEMEnergyCellModel.m in Sources */,
 				930F70DE1BE6557A00F18626 /* DEMGravizzappa.m in Sources */,
+				30BD06531C259B14000E6A24 /* DEMResources.m in Sources */,
 				93CB434A1BEA5D8C00992134 /* DEMWave.m in Sources */,
 				930F70D91BE6535900F18626 /* DEMStoreVM.m in Sources */,
 				930F70D61BE652FD00F18626 /* DEMStoreVC.m in Sources */,
@@ -580,13 +690,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9389062C1C149780004B1309 /* DEMStoreStuffUpgrade.m in Sources */,
 				93163B081BEF63AB007BDF03 /* DEMGameCoreSpec.m in Sources */,
 				930F70E81BE6589200F18626 /* DEMStoreItemCell.m in Sources */,
+				303518B41C1DA1C500078788 /* DEMCharacteristicEps.m in Sources */,
 				93CB41411BE9E49000992134 /* DEMStoreVM.m in Sources */,
 				93BFF4141BE64D6100EB4B29 /* DEMMotherShipVM.m in Sources */,
 				93CB43361BEA3F6F00992134 /* DEMMotherShipVMSpec.m in Sources */,
+				303518B81C1DA22900078788 /* DEMCharacteristicTypes.m in Sources */,
+				30BD06541C259B14000E6A24 /* DEMResources.m in Sources */,
 				93163B0F1BEFADF6007BDF03 /* DEMGameVMSpec.m in Sources */,
 				93CB43421BEA53DE00992134 /* DEMStoreVMSpec.m in Sources */,
+				938906261C146D29004B1309 /* DEMVisitorPlace.m in Sources */,
+				93616AAC1C01F67F00F88CB3 /* DEMStoreStuffBuy.m in Sources */,
+				93946CD31C01ECDF0085D087 /* DEMStoreStuffBuy.m in Sources */,
+				303518B01C1D9FE300078788 /* DEMCharacteristic.m in Sources */,
+				30BD064F1C2589DC000E6A24 /* DEMStoreVCSpec.m in Sources */,
 				93163B0B1BEF68D3007BDF03 /* DEMWaveEngineSpec.m in Sources */,
 				936178451BF772A300A3BB3E /* NSObject+DGSTestHelper.m in Sources */,
 				933368EE1BF38EE700600935 /* DEMBattleEngine.m in Sources */,
@@ -599,8 +718,11 @@
 				93163B091BEF63FD007BDF03 /* DEMGameCore.m in Sources */,
 				930F70EC1BE65D8A00F18626 /* DEMWarehouseVM.m in Sources */,
 				93CB43461BEA590600992134 /* DEMWaveEngine.m in Sources */,
+				9389062E1C1497D6004B1309 /* DEMStoreStuffUpgradeSpec.m in Sources */,
+				303518BD1C1DAEA800078788 /* DEMUUID.m in Sources */,
 				930F70DF1BE6557A00F18626 /* DEMGravizzappa.m in Sources */,
 				932BE4851BEA6B4200201FA3 /* DEMWaveSpec.m in Sources */,
+				303518AC1C1D96B700078788 /* DEMBaseItem.m in Sources */,
 				93CB41401BE9DD5B00992134 /* DEMWarehouseVMSpec.m in Sources */,
 				93CB433E1BEA44F500992134 /* DEMClockEngineSpec.m in Sources */,
 			);
@@ -722,6 +844,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
+				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
+				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Demo1/DEMPrefix-Header.h";
 				INFOPLIST_FILE = Demo1/Info.plist;
@@ -738,6 +862,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
+				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
+				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Demo1/DEMPrefix-Header.h";
 				INFOPLIST_FILE = Demo1/Info.plist;
@@ -752,6 +878,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D815CE3EA7C2B65981FD82A3 /* Pods-Demo1Tests.debug.xcconfig */;
 			buildSettings = {
+				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
+				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Demo1/DEMPrefix-Header.h";
 				INFOPLIST_FILE = Demo1Tests/Info.plist;
@@ -765,6 +893,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C80D8E5EB4F07368B3B4CC2C /* Pods-Demo1Tests.release.xcconfig */;
 			buildSettings = {
+				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
+				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Demo1/DEMPrefix-Header.h";
 				INFOPLIST_FILE = Demo1Tests/Info.plist;

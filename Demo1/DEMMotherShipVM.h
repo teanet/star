@@ -1,21 +1,27 @@
-#import "DEMEnergyCellModel.h"
 #import "DEMWarehouseVM.h"
 #import "DEMBattleProtocol.h"
 #import "DEMClockEngineProtocol.h"
-#import "DEMGravizzappa.h"
+#import "DEMStuffProtocol.h"
+#import "DEMActionExchangeProtocol.h"
+#import "DEMActionUpgradeProtocol.h"
+#import "DEMVisitorProtocol.h"
 
 @interface DEMMotherShipVM : NSObject
 <
 DEMBattleProtocol,
-DEMClockEngineProtocol
+DEMVisitorProtocol,
+DEMClockEngineProtocol,
+DEMActionExchangeProtocol,
+DEMActionUpgradeProtocol
 >
 
 @property (nonatomic, assign) double currentEnergyLevel;
 @property (nonatomic, assign) double extraEnergyLevel;
 
 @property (nonatomic, strong, readonly) DEMWarehouseVM *warehouse;
+@property (nonatomic, strong, readonly) NSArray *installedItems;
 @property (nonatomic, assign, readonly) double maxEnergyLevel;
 
-- (void)installGravizzappa:(DEMGravizzappa *)gravizzappa;
+- (BOOL)installStuff:(id)stuff;
 
 @end

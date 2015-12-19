@@ -9,5 +9,6 @@
 @interface RACSignal (DGSTestHelper)
 
 - (id)dgs_lastObjectAfterAction:(dispatch_block_t)block;
+- (id)dgs_lastErrorAfterAction:(dispatch_block_t)block;
 
 @end

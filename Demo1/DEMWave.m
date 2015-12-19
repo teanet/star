@@ -1,7 +1,7 @@
 #import "DEMWave.h"
 
 const NSTimeInterval kDEMMinimumDurationTime = 1.0;
-const NSTimeInterval kDEMMinimumScheduleTime = 2.0;
+const NSTimeInterval kDEMMinimumScheduleTime = 20.0;
 const NSTimeInterval kDEMDefaultDPS = 1.0;
 const double kDPSIncreaseFactor = 1.1;
 

@@ -1,15 +1,8 @@
-//
-//  DEMWarehouseVM.m
-//  Demo1
-//
-//  Created by tea on 01/11/15.
-//  Copyright © 2015 demo. All rights reserved.
-//
-
 #import "DEMWarehouseVM.h"
 
 @interface DEMWarehouseVM ()
 
+@property (nonatomic, strong, readonly) DEMResources *resources;
 
 @end
 
@@ -25,6 +18,7 @@
 
 	_items = [NSMutableSet set];
 	_capacity = 100;
+	_resources = [[DEMResources alloc] init];
 
 	return self;
 }
@@ -45,6 +39,21 @@
 		currentEnergy += obj.capacity;
 	}];
 	return currentEnergy > enegry;
+}
+
+// MARK: DEMActionExchangeResourcesProtocol
+
+
+- (DEMResources *)availableResources {
+	return self.resources;
+}
+
+- (void)addResources:(DEMResources *)resources {
+
+}
+
+- (void)withdrawResources:(DEMResources *)resources {
+
 }
 
 @end

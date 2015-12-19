@@ -1,10 +1,14 @@
-#import "DEMStoreItem.h"
+#import "DEMStuffProtocol.h"
 
-extern const double kDEMGravizzappaPrice;
+#import "DEMBaseItem.h"
 
-@interface DEMGravizzappa : NSObject
+extern const double kDEMInitialGravizzappaPrice;
+
+@interface DEMGravizzappa : DEMBaseItem
 <
-DEMStoreItem
+DEMExchangableStuffProtocol,
+DEMStuffProtocol,
+NSCopying
 >
 
 @property (nonatomic, assign, readonly) double energyPerSecond;

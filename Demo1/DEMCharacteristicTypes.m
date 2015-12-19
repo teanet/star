@@ -1,0 +1,1 @@
+NSString *const kDEMCharacteristicEPS = @"DEMCharacteristicEPS";
